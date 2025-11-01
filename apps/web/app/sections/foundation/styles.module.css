@@ -1,0 +1,70 @@
+.foundation {
+  @apply relative isolate py-40 block;
+}
+
+.inner__container {
+  @apply w-full md:w-[40%] flex flex-col gap-6;
+}
+
+.heading__container {
+  @apply flex flex-col gap-6;
+}
+
+.heading__container p {
+  @apply text-[var(--color-text-tertiary)] text-balance text-[15px] leading-[23px] tracking-[-0.16px];
+}
+
+.list__container {
+  @apply mt-4;
+}
+
+.seperator {
+  @apply h-[2px] w-full bg-[var(--bento-border)] rounded-full;
+}
+
+.list {
+  @apply mt-6 grid sm:grid-cols-2 gap-x-12 gap-y-10;
+}
+
+.list__item {
+  @apply flex flex-col gap-2 sm:contents;
+}
+
+.item__label,
+.item__value {
+  @apply text-sm leading-[21px] tracking-[-0.18px];
+}
+
+.item__label {
+  @apply font-medium text-[var(--color-text-primary)];
+}
+
+.item__value {
+  @apply text-[var(--color-text-tertiary)] text-pretty;
+}
+
+.feature__list__container {
+  @apply mt-10;
+}
+
+.feature__list {
+  @apply mt-8 grid grid-cols-2 md:grid-cols-4 gap-5;
+}
+
+.feature__card {
+  @apply flex flex-col gap-3;
+}
+
+.feature__card__title {
+  @apply text-[13px] leading-[19px] tracking-[-0.12px] text-[var(--color-text-tertiary)];
+}
+
+.under__the__hood {
+  @apply hidden md:block absolute inset-0 overflow-hidden pointer-events-none;
+}
+
+.under__the__hood svg {
+  @apply block absolute left-1/2;
+  inset-block: 0;
+  margin: auto;
+}
