@@ -45,12 +45,14 @@ linear-clone/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <your-repo-url>
    cd linear-clone
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -58,6 +60,7 @@ linear-clone/
 3. **Setup environment variables**
 
    For the API:
+
    ```bash
    cd apps/api
    cp .env.example .env
@@ -65,6 +68,7 @@ linear-clone/
    ```
 
    For the database:
+
    ```bash
    cd packages/database
    cp .env.example .env
@@ -72,6 +76,7 @@ linear-clone/
    ```
 
 4. **Create the database**
+
    ```sql
    CREATE DATABASE linear_clone;
    ```
@@ -86,15 +91,18 @@ linear-clone/
 ## 🚦 Development
 
 ### Start all apps
+
 ```bash
 npm run dev
 ```
 
 This starts:
+
 - Frontend (Next.js) at http://localhost:3000
 - Backend (Hono.js) at http://localhost:3001
 
 ### Start specific app
+
 ```bash
 # Frontend only
 npx turbo dev --filter=web
@@ -188,6 +196,7 @@ npm run db:studio
 ## 🎯 Current Status
 
 ### ✅ Completed (Phase 1)
+
 - [x] Project initialization with Turborepo
 - [x] Biome.js setup for linting and formatting
 - [x] Vitest setup for comprehensive testing
@@ -197,12 +206,14 @@ npm run db:studio
 - [x] Turborepo pipeline configuration
 
 ### 🔄 In Progress
+
 - [ ] Database schema design (Phase 2)
 - [ ] Backend API development (Phase 3)
 - [ ] Frontend development (Phase 4)
 - [ ] Authentication with Better Auth
 
 ### 📋 Planned
+
 - [ ] Issue tracking features
 - [ ] Project management
 - [ ] Cycles/sprints
@@ -221,17 +232,17 @@ npm run db:studio
 
 ## 📝 Scripts Reference
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start all apps in development mode |
-| `npm run build` | Build all apps and packages |
-| `npm run lint` | Lint all code with Biome.js |
-| `npm run lint:fix` | Lint and auto-fix issues |
-| `npm run format` | Format all code with Biome.js |
-| `npm run test` | Run all tests |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run test:coverage` | Run tests with coverage |
-| `npm run check-types` | Type check all packages |
+| Command                 | Description                        |
+| ----------------------- | ---------------------------------- |
+| `npm run dev`           | Start all apps in development mode |
+| `npm run build`         | Build all apps and packages        |
+| `npm run lint`          | Lint all code with Biome.js        |
+| `npm run lint:fix`      | Lint and auto-fix issues           |
+| `npm run format`        | Format all code with Biome.js      |
+| `npm run test`          | Run all tests                      |
+| `npm run test:watch`    | Run tests in watch mode            |
+| `npm run test:coverage` | Run tests with coverage            |
+| `npm run check-types`   | Type check all packages            |
 
 ## 🔗 Useful Links
 
@@ -245,4 +256,3 @@ npm run db:studio
 ---
 
 **Built with ❤️ following Principal Engineer best practices**
-

@@ -6,11 +6,13 @@ Drizzle ORM schema and migrations for Linear Clone.
 
 1. Install PostgreSQL 14+
 2. Create a database:
+
    ```sql
    CREATE DATABASE linear_clone;
    ```
 
 3. Copy environment variables:
+
    ```bash
    cp .env.example .env
    ```

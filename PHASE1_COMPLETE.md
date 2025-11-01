@@ -3,11 +3,13 @@
 ## ✅ All Tasks Completed
 
 ### 1. Removed Unnecessary Template Files
+
 - ✅ Removed `apps/docs` directory (not needed for Linear clone)
 - ✅ Removed `packages/eslint-config` directory (replaced with Biome.js)
 - ✅ Cleaned up all references to removed packages
 
 ### 2. Setup Biome.js for Linting and Formatting
+
 - ✅ Installed `@biomejs/biome` at root level
 - ✅ Created `biome.json` configuration file with strict rules
 - ✅ Updated root `package.json` scripts for linting and formatting
@@ -15,6 +17,7 @@
 - ✅ Successfully formatted entire codebase (32 files)
 
 ### 3. Setup Vitest for Testing
+
 - ✅ Installed Vitest and related tools at root level
 - ✅ Created root `vitest.config.ts` with coverage thresholds
 - ✅ Updated `turbo.json` with test pipeline tasks
@@ -22,8 +25,9 @@
 - ✅ Configured testing for all packages
 
 ### 4. Setup Frontend Dependencies (apps/web)
+
 - ✅ Installed Tailwind CSS with PostCSS and Autoprefixer
-- ✅ Installed Radix UI components (@radix-ui/*)
+- ✅ Installed Radix UI components (@radix-ui/\*)
 - ✅ Installed Lucide React for icons
 - ✅ Installed Zustand for state management
 - ✅ Installed React Hook Form + Zod for forms
@@ -37,6 +41,7 @@
 - ✅ Created `vitest.setup.ts` with jest-dom
 
 ### 5. Created Backend App (apps/api)
+
 - ✅ Created `apps/api` directory structure
 - ✅ Created `package.json` with Hono.js dependencies
 - ✅ Created `tsconfig.json` for TypeScript configuration
@@ -53,6 +58,7 @@
 - ✅ Created README.md with architecture documentation
 
 ### 6. Created Database Package (packages/database)
+
 - ✅ Created `packages/database` directory
 - ✅ Created `package.json` with Drizzle ORM dependencies
 - ✅ Created `tsconfig.json` for TypeScript configuration
@@ -66,6 +72,7 @@
 - ✅ Created README.md with database setup instructions
 
 ### 7. Updated Turborepo Configuration
+
 - ✅ Updated `turbo.json` with complete pipeline:
   - `build` task with proper outputs
   - `dev` task for development servers
@@ -76,6 +83,7 @@
   - `test:coverage` task for coverage reports
 
 ### 8. Additional Improvements
+
 - ✅ Updated root README.md with comprehensive documentation
 - ✅ Installed all dependencies successfully
 - ✅ Formatted entire codebase with Biome.js
@@ -132,6 +140,7 @@ linear-clone/
 ## 🚀 Available Commands
 
 ### Development
+
 ```bash
 npm run dev                  # Start all apps
 npx turbo dev --filter=web  # Start frontend only
@@ -139,6 +148,7 @@ npx turbo dev --filter=api  # Start backend only
 ```
 
 ### Code Quality
+
 ```bash
 npm run lint                 # Lint all code
 npm run lint:fix             # Lint and auto-fix
@@ -147,6 +157,7 @@ npm run check-types          # Type check all packages
 ```
 
 ### Testing
+
 ```bash
 npm run test                 # Run all tests
 npm run test:watch           # Watch mode
@@ -154,6 +165,7 @@ npm run test:coverage        # With coverage
 ```
 
 ### Build
+
 ```bash
 npm run build                # Build all apps
 ```
@@ -200,10 +212,12 @@ npm run build                # Build all apps
 ## 📊 Dependencies Installed
 
 ### Root
+
 - @biomejs/biome
 - vitest, @vitest/ui, @vitest/coverage-v8
 
 ### apps/web
+
 - Tailwind CSS, PostCSS, Autoprefixer
 - Radix UI components (dialog, dropdown, select, popover, etc.)
 - lucide-react
@@ -213,11 +227,13 @@ npm run build                # Build all apps
 - @testing-library/react, @testing-library/jest-dom, @testing-library/user-event, jsdom
 
 ### apps/api
+
 - hono, @hono/node-server
 - ws, cors, dotenv
 - tsx, supertest
 
 ### packages/database
+
 - drizzle-orm, drizzle-kit
 - postgres
 - dotenv, tsx
