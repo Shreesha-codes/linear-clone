@@ -46,10 +46,11 @@ linear-clone/
 
 **Removed**: `docs` app (unnecessary for Linear clone), `eslint-config` package (replaced with Biome.js)
 
-**Phase 1 & 2 Complete**:
+**Phase 1, 2 & 3.1 Complete**:
 
 - Phase 1: Turborepo setup, Biome.js, Vitest, Next.js with Tailwind v4, Hono.js backend, database package
-- Phase 2: Database schema with 15 tables (users, workspaces, teams, projects, cycles, issues, labels, comments, attachments, activity logs, notifications), 17 performance indexes, transaction utilities, query builders
+- Phase 2: Database schema with 16 tables (users with passwordHash, sessions, workspaces, teams, projects, cycles, issues, labels, comments, attachments, activity logs, notifications), 17 performance indexes, transaction utilities, query builders
+- Phase 3.1: Authentication system with JWT tokens, bcrypt password hashing, session management, auth middleware, registration/login/logout/me endpoints, Zod validation, 17/17 tests passing
 
 **Current State**: Fresh Next.js 16 + Tailwind CSS v4 app with minimal scaffolding, ready for Linear clone UI development
 
@@ -64,12 +65,17 @@ linear-clone/
 - TypeScript: 5.x (strict mode enabled)
 - Code Quality: Biome.js 1.9.4 (root) + 2.2.0 (apps/web for compatibility)
 
+**Implemented**:
+
+- Backend: Hono.js 4.6.11 (running on port 3001)
+- Database: PostgreSQL with Drizzle ORM 0.36.4
+- Auth: ✅ JWT + Bcrypt (17/17 tests passing)
+- Validation: Zod 3.23.8
+- Testing: Vitest 2.1.4 (comprehensive test coverage required)
+
 **Planned** (per `AGENTS.md`):
 
-- Backend: Hono.js with WebSockets
-- Database: PostgreSQL with Drizzle ORM
-- Auth: Better Auth
-- Testing: Vitest (comprehensive test coverage required)
+- Backend: WebSockets for real-time features
 - UI: Radix UI primitives (to be installed)
 - State: Zustand (to be installed)
 - Forms: React Hook Form + Zod (to be installed)

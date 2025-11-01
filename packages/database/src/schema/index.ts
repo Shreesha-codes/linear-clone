@@ -1,5 +1,6 @@
 // Schema exports - all database tables
 export * from './users';
+export * from './sessions';
 export * from './workspaces';
 export * from './workspace-members';
 export * from './teams';
