@@ -20,65 +20,50 @@ const Header: FC = () => {
                 </Link>
               </li>
 
-              <li className={cn(styles.hide__mobile, styles.header__trigger)}>
+              <li className={cn(styles.hide__mobile, styles.header__item)}>
                 <Link className={styles.header__link} href="#">
-                  {' '}
-                  Features{' '}
-                </Link>
-              </li>
-
-              <li className={cn(styles.hide__laptop, styles.header__item)}>
-                <Link className={styles.header__link} href="#">
-                  {' '}
-                  Method{' '}
-                </Link>
-              </li>
-
-              <li className={cn(styles.hide__laptop, styles.header__item)}>
-                <Link className={styles.header__link} href="#">
-                  {' '}
-                  Customers{' '}
-                </Link>
-              </li>
-
-              <li className={cn(styles.hide__tablet, styles.header__item)}>
-                <Link className={styles.header__link} href="#">
-                  {' '}
-                  Changelog{' '}
+                  Product
                 </Link>
               </li>
 
               <li className={cn(styles.hide__mobile, styles.header__item)}>
                 <Link className={styles.header__link} href="#">
-                  {' '}
-                  Pricing{' '}
+                  Resources
                 </Link>
               </li>
 
-              <li className={cn(styles.hide__mobile, styles.header__trigger)}>
+              <li className={cn(styles.hide__mobile, styles.header__item)}>
                 <Link className={styles.header__link} href="#">
-                  {' '}
-                  Company{' '}
+                  Pricing
                 </Link>
               </li>
 
               <li className={cn(styles.hide__tablet, styles.header__item)}>
                 <Link className={styles.header__link} href="#">
-                  {' '}
-                  Contact{' '}
+                  Customers
+                </Link>
+              </li>
+
+              <li className={cn(styles.hide__tablet, styles.header__item)}>
+                <Link className={styles.header__link} href="#">
+                  Now
+                </Link>
+              </li>
+
+              <li className={cn(styles.hide__laptop, styles.header__item)}>
+                <Link className={styles.header__link} href="#">
+                  Contact
                 </Link>
               </li>
 
               <li className={cn(styles.header__item, styles.header__button, styles.header__login)}>
                 <Link className={cn(styles.header__link, styles.button__login)} href="#">
-                  {' '}
-                  Log in <kbd className={styles.header__kbd}> L </kbd>
+                  Log in
                 </Link>
               </li>
 
               <li className={cn(styles.header__item, styles.header__button, styles.header__signup)}>
                 <Link className={cn(styles.header__link, styles.button__signup)} href="#">
-                  {' '}
                   Sign up
                 </Link>
               </li>

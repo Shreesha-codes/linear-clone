@@ -15,57 +15,67 @@
 }
 
 .header .header__wrapper {
-  @apply block select-none isolate overflow-hidden fixed px-3 max-w-[var(--header-max-width)] z-[var(--layer-header)] backdrop-blur-xl backdrop-saturate-[140%] rounded-[var(--header-radius)];
-  background-color: hsla(0, 0%, 4%, 0.2);
-  --clip: inset(
-    0 0 calc(100% - var(--header-height) + var(--header-top)) 0 round var(--header-radius)
-  );
-  inset: var(--header-top) 0;
-  margin-inline: auto;
-  width: calc(100vw - (var(--page-padding-left) / 2) - (var(--page-padding-right) / 2));
-  transform: translateX(calc(-1 * var(--removed-body-scroll-bar-size, 0px) / 2));
-  clip-path: var(--clip);
-  transition: 0.24s var(--ease-out-quad);
-  transition-property: clip-path, background;
-}
-
-.header .header__wrapper::before {
-  @apply content-[''] absolute pointer-events-none inset-0 border border-[var(--header-border)] rounded-[var(--header-radius)];
-  height: calc(var(--header-height) - var(--header-top));
-  will-change: height;
-  transition: inherit;
-  transition-property: height;
+  @apply block select-none isolate overflow-hidden fixed z-[var(--layer-header)];
+  background-color: #0a0a0a;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  inset: 0 0 auto 0;
+  width: 100%;
+  padding: 0;
+  height: 56px;
+  border-radius: 0;
+  border: none;
 }
 
 .header .header__root {
   @apply flex flex-col w-full h-full sm:block;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 90px;
 }
 
 .header .header__root .header__list {
-  @apply flex gap-4 sm:gap-0 justify-start sm:justify-between items-stretch;
-  min-height: calc(var(--header-height) - var(--header-top));
+  @apply flex gap-0 justify-center items-center;
+  min-height: 56px;
+  height: 56px;
 }
 
 .header .header__root .header__list .header__logo {
-  @apply text-[var(--color-text-primary)];
+  color: #ffffff;
+  margin-right: 135px;
+  flex-shrink: 0;
 }
 
 .header .header__root .header__list .header__logo__link {
-  @apply flex justify-center items-center px-2 h-full;
+  @apply flex justify-center items-center h-full;
+  padding: 0;
+}
+
+.header .header__root .header__list .header__logo__link svg {
+  width: 85px;
+  height: 20px;
+  color: #ffffff;
+  fill: currentColor;
 }
 
 .header .header__root .header__list .header__trigger,
 .header .header__root .header__list .header__item {
-  @apply text-[13px] font-medium text-[hsla(0,0%,100%,0.8)] transition-colors;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  @apply text-[14px] font-normal transition-colors;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .header .header__root .header__list .header__item {
   @apply whitespace-nowrap;
+  flex-shrink: 0;
 }
 
 .header .header__root .header__list .header__link {
-  @apply px-2 md:px-3 lg:px-4 flex justify-center items-center h-full;
+  @apply flex justify-center items-center h-full;
+  padding: 0 18px;
+}
+
+.header .header__root .header__list .header__link:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 .header .header__root .header__list .header__button {
@@ -73,19 +83,39 @@
 }
 
 .header .button__login {
-  @apply bg-[var(--color-bg-quaternary)] text-[var(--color-text-primary)] shadow-[var(--shadow-stack-low)] font-medium text-[13px] h-6 gap-1 px-3 rounded-lg hover:brightness-125 transition-colors;
+  @apply bg-transparent font-normal text-[14px] transition-all;
+  color: rgba(255, 255, 255, 0.6);
+  height: 32px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 8px;
+}
+
+.header .button__login:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 .header .button__signup {
-  @apply !text-[var(--color-bg-primary)] bg-[#e6e6e6] shadow-[var(--shadow-stack-low)] font-medium text-[13px] h-6 gap-1 px-3 rounded-lg hover:bg-[var(--color-text-primary)] transition-colors;
+  @apply font-medium text-[14px] transition-all;
+  background-color: #ffffff;
+  color: #000000;
+  height: 30px !important;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.header .button__signup:hover {
+  background-color: #e6e6e6;
 }
 
 .header .header__root .header__list .header__login {
-  @apply ml-auto sm:ml-0 my-2;
+  margin-right: 12px;
+  margin-left: 100px;
 }
 
 .header .header__root .header__list .header__signup {
-  @apply my-2;
+  margin-right: 0;
 }
 
 .header .header__kbd {
