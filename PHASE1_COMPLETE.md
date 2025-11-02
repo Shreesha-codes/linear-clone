@@ -39,12 +39,12 @@
 
 **Updated (Manual Changes)**:
 
-- ✅ **Migrated to Tailwind CSS 4.1.16** (latest v4 with CSS-first architecture)
+- ✅ **Using Tailwind CSS 3.4.18** (latest v3 with stable features)
 - ✅ **Upgraded to Next.js 16.0.1** and React 19.2.0
-- ✅ Simplified postcss.config.mjs for v4 (@tailwindcss/postcss only)
-- ✅ Updated globals.css with `@import "tailwindcss"` and `@theme inline`
-- ✅ Removed old dependencies (Radix UI, Zustand, React Hook Form temporarily)
-- ✅ Fresh scaffolding with minimal Geist fonts setup
+- ✅ Simplified postcss.config.mjs for Tailwind v3
+- ✅ Updated globals.css with proper @tailwind directives
+- ✅ Fresh implementation with Radix UI, Zustand, React Hook Form
+- ✅ Complete design system with 12 UI components
 
 ### 5. Created Backend App (apps/api)
 
@@ -228,19 +228,16 @@ npm run build                # Build all apps
 ### apps/web (Current State)
 
 - **Next.js 16.0.1** with React 19.2.0 (latest)
-- **Tailwind CSS 4.1.16** with @tailwindcss/postcss@^4
+- **Tailwind CSS 3.4.18** (latest v3 stable)
 - TypeScript 5.x
 - @biomejs/biome@2.2.0 (local for compatibility)
-- next/font (Geist Sans, Geist Mono)
+- Radix UI components (avatar, dropdown-menu, select, tooltip, etc.)
+- Zustand for state management
+- React Hook Form + Zod for forms and validation
+- lucide-react for icons
+- date-fns for date handling
 
-**Removed** (ready to reinstall as needed):
-
-- Radix UI components (all removed)
-- lucide-react
-- zustand
-- react-hook-form, zod, @hookform/resolvers
-- date-fns
-- Testing libraries (@testing-library/react, jsdom, etc.)
+**Phase 4.1-4.3 Complete**: 12 UI components, 5 Zustand stores, layouts ready
 
 ### apps/api
 
@@ -267,4 +264,4 @@ All tasks from Phase 1 of AGENTS.md have been successfully completed. The projec
 - ✅ **Updated turbo.json** - Changed `lint` to `//#lint` (workspace format)
 - ✅ **Cleaned dependencies** - Removed unused packages, ready for fresh implementation
 
-**Next**: Implement Linear-inspired UI with Tailwind v4 utilities and custom design system
+**Next**: Implement Linear-inspired UI with Tailwind v3 utilities and custom design system. Proceed to Phase 4.4 - Authentication Pages.
