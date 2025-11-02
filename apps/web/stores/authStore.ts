@@ -46,7 +46,7 @@ interface AuthActions {
   logoutUser: () => Promise<void>;
 }
 
-type AuthStore = AuthState & AuthActions;
+export type AuthStore = AuthState & AuthActions;
 
 export const useAuthStore = create<AuthStore>()(
   devtools(
@@ -177,3 +177,9 @@ export const useAuthStore = create<AuthStore>()(
     { name: 'AuthStore' }
   )
 );
+
+// Selector hooks for better TypeScript inference
+export const useUser = () => useAuthStore((state) => state.user);
+export const useIsAuthenticated = () => useAuthStore((state) => state.isAuthenticated);
+export const useAuthToken = () => useAuthStore((state) => state.token);
+export const useAuthLoading = () => useAuthStore((state) => state.isLoading);

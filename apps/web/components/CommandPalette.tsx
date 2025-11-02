@@ -39,7 +39,7 @@ interface CommandAction {
 export function CommandPalette() {
   const router = useRouter();
   const { commandPaletteOpen, closeCommandPalette, openModal } = useUIStore();
-  const { activeTeamId } = useTeamStore();
+  const activeTeam = useTeamStore((state) => state.getActiveTeam());
   const [search, setSearch] = useState('');
 
   // Quick actions
@@ -113,44 +113,43 @@ export function CommandPalette() {
   ];
 
   // Add team-specific navigation if team is active
-  if (activeTeamId) {
+  if (activeTeam?.id) {
     navigationActions.push(
       {
         id: 'nav-team-issues',
-        label: 'Go to Team Issues',
-        icon: <FileText className="h-4 w-4" />,
+        label: 'Go to Issues',
+        icon: <FileText className="mr-2 h-4 w-4" />,
         onSelect: () => {
+          router.push(`/team/${activeTeam.id}/issues`);
           closeCommandPalette();
-          router.push(`/team/${activeTeamId}/issues`);
         },
-        category: 'navigation',
+        category: 'navigation' as const,
+        shortcut: 'g i',
       },
       {
-        id: 'nav-projects',
+        id: 'nav-team-projects',
         label: 'Go to Projects',
-        icon: <FolderKanban className="h-4 w-4" />,
+        icon: <FolderKanban className="mr-2 h-4 w-4" />,
         onSelect: () => {
+          router.push(`/team/${activeTeam.id}/projects`);
           closeCommandPalette();
-          router.push(`/team/${activeTeamId}/projects`);
         },
-        category: 'navigation',
-        shortcut: 'G → P',
+        category: 'navigation' as const,
+        shortcut: 'g p',
       },
       {
-        id: 'nav-cycles',
+        id: 'nav-team-cycles',
         label: 'Go to Cycles',
-        icon: <Repeat className="h-4 w-4" />,
+        icon: <Repeat className="mr-2 h-4 w-4" />,
         onSelect: () => {
+          router.push(`/team/${activeTeam.id}/cycles`);
           closeCommandPalette();
-          router.push(`/team/${activeTeamId}/cycles`);
         },
-        category: 'navigation',
-        shortcut: 'G → C',
+        category: 'navigation' as const,
+        shortcut: 'g c',
       }
     );
-  }
-
-  // Search actions
+  }  // Search actions
   const searchActions: CommandAction[] = [
     {
       id: 'search-issues',

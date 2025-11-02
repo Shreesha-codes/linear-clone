@@ -37,7 +37,7 @@ export function TopNav() {
         </Button>
 
         {/* Create Issue */}
-        <Button variant="default" size="sm" className="gap-2">
+        <Button variant="primary" size="sm" className="gap-2">
           <Plus className="h-4 w-4" />
           New Issue
         </Button>
@@ -52,7 +52,7 @@ export function TopNav() {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-8 w-8 rounded-full">
               <Avatar className="h-8 w-8">
-                <AvatarImage src={user?.avatarUrl} alt={user?.name} />
+                <AvatarImage src={user?.avatar_url || undefined} alt={user?.name} />
                 <AvatarFallback>{user?.name?.[0] || 'U'}</AvatarFallback>
               </Avatar>
             </Button>

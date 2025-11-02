@@ -1,52 +1,73 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { devtools } from 'zustand/middleware';
 
 interface Workspace {
   id: string;
   name: string;
   slug: string;
-  icon?: string;
+  icon: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 interface WorkspaceState {
   workspaces: Workspace[];
-  activeWorkspace: Workspace | null;
+  activeWorkspaceId: string | null;
   isLoading: boolean;
+}
+
+interface WorkspaceActions {
   setWorkspaces: (workspaces: Workspace[]) => void;
-  setActiveWorkspace: (workspace: Workspace | null) => void;
   addWorkspace: (workspace: Workspace) => void;
   updateWorkspace: (id: string, updates: Partial<Workspace>) => void;
   removeWorkspace: (id: string) => void;
-  setIsLoading: (isLoading: boolean) => void;
+  setActiveWorkspace: (id: string) => void;
+  getActiveWorkspace: () => Workspace | null;
+  setLoading: (isLoading: boolean) => void;
 }
 
-export const useWorkspaceStore = create<WorkspaceState>()(
-  persist(
-    (set) => ({
+type WorkspaceStore = WorkspaceState & WorkspaceActions;
+
+export const useWorkspaceStore = create<WorkspaceStore>()(
+  devtools(
+    (set, get) => ({
+      // State
       workspaces: [],
-      activeWorkspace: null,
+      activeWorkspaceId: null,
       isLoading: false,
+
+      // Actions
       setWorkspaces: (workspaces) => set({ workspaces }),
-      setActiveWorkspace: (workspace) => set({ activeWorkspace: workspace }),
+
       addWorkspace: (workspace) =>
-        set((state) => ({ workspaces: [...state.workspaces, workspace] })),
+        set((state) => ({
+          workspaces: [...state.workspaces, workspace],
+        })),
+
       updateWorkspace: (id, updates) =>
         set((state) => ({
-          workspaces: state.workspaces.map((w) => (w.id === id ? { ...w, ...updates } : w)),
-          activeWorkspace:
-            state.activeWorkspace?.id === id
-              ? { ...state.activeWorkspace, ...updates }
-              : state.activeWorkspace,
+          workspaces: state.workspaces.map((workspace) =>
+            workspace.id === id ? { ...workspace, ...updates } : workspace
+          ),
         })),
+
       removeWorkspace: (id) =>
         set((state) => ({
-          workspaces: state.workspaces.filter((w) => w.id !== id),
-          activeWorkspace: state.activeWorkspace?.id === id ? null : state.activeWorkspace,
+          workspaces: state.workspaces.filter((workspace) => workspace.id !== id),
+          activeWorkspaceId: state.activeWorkspaceId === id ? null : state.activeWorkspaceId,
         })),
-      setIsLoading: (isLoading) => set({ isLoading }),
+
+      setActiveWorkspace: (id) => set({ activeWorkspaceId: id }),
+
+      getActiveWorkspace: () => {
+        const state = get();
+        return (
+          state.workspaces.find((workspace) => workspace.id === state.activeWorkspaceId) || null
+        );
+      },
+
+      setLoading: (isLoading) => set({ isLoading }),
     }),
-    {
-      name: 'workspace-storage',
-    }
+    { name: 'WorkspaceStore' }
   )
 );

@@ -19,9 +19,10 @@ import { usePathname } from 'next/navigation';
 
 export function Sidebar() {
   const pathname = usePathname();
-  const { activeWorkspace } = useWorkspaceStore();
-  const { teams, activeTeam } = useTeamStore();
-  const { sidebarCollapsed } = useUIStore();
+  const activeWorkspace = useWorkspaceStore((state) => state.getActiveWorkspace());
+  const teams = useTeamStore((state) => state.teams);
+  const activeTeam = useTeamStore((state) => state.getActiveTeam());
+  const sidebarCollapsed = useUIStore((state) => state.sidebarCollapsed);
 
   if (sidebarCollapsed) {
     return null;
@@ -42,7 +43,7 @@ export function Sidebar() {
             <Button variant="ghost" className="w-full justify-between">
               <div className="flex items-center gap-2">
                 <Avatar className="h-6 w-6">
-                  <AvatarImage src={activeWorkspace?.icon} />
+                  <AvatarImage src={activeWorkspace?.icon || undefined} />
                   <AvatarFallback>{activeWorkspace?.name?.[0] || 'W'}</AvatarFallback>
                 </Avatar>
                 <span className="font-medium truncate">

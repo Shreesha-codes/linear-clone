@@ -7,11 +7,13 @@ import { TopNav } from '@/components/layout/TopNav';
 import { CommandPalette } from '@/components/CommandPalette';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import { useMockData } from '@/hooks/useMockData';
-import { useAuthStore } from '@/stores/authStore';
+import { useAuthStore, useAuthLoading } from '@/stores/authStore';
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const { user, isLoading, initializeSession } = useAuthStore();
+  const user = useAuthStore((state) => state.user);
+  const isLoading = useAuthLoading();
+  const initializeSession = useAuthStore((state) => state.initializeSession);
 
   // Initialize keyboard shortcuts
   useKeyboardShortcuts();
