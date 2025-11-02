@@ -1,8 +1,8 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC, ReactNode } from 'react';
-import { cn } from '@/lib/utils';
 import styles from './styles.module.css';
 
 type Props = {
@@ -23,7 +23,7 @@ const popIn = {
     scale: 1,
     filter: 'blur(0)',
     transition: {
-      type: 'spring',
+      type: 'spring' as const,
       duration: 1,
       scale: { duration: 0.8 },
       // filter: { duration: 0.4 },
@@ -34,7 +34,7 @@ const popIn = {
     scale: 0.8,
     filter: 'blur(5px)',
     transition: {
-      ease: 'easeIn',
+      ease: 'easeIn' as const,
       duration: 0.7,
       scale: { duration: 0.7 },
       // filter: { duration: 0.3, delay: 0.4 },

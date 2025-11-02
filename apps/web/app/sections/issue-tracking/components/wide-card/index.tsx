@@ -1,8 +1,8 @@
+import BentoCardHeading from '@/components/bento-grid/components/bento-card-heading';
 import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
-import BentoCardHeading from '@/components/bento-grid/components/bento-card-heading';
 import styles from './styles.module.css';
 
 const WideCard: FC = () => {

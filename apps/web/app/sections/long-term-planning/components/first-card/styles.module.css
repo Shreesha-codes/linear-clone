@@ -19,9 +19,7 @@
 .project__overview__card .outter__container::before {
   @apply content-[''] pointer-events-none select-none absolute top-0 left-0 right-0 bottom-0 rounded-[18px] bg-[var(--gradientBorder-gradient)] p-[1px];
 
-  mask:
-    linear-gradient(#000, #000) content-box,
-    linear-gradient(#000, #000);
+  mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
   mask-composite: exclude;
 }
 
@@ -41,9 +39,7 @@
 .project__overview__card .inner__container::before {
   @apply content-[''] pointer-events-none select-none absolute top-0 left-0 right-0 bottom-0 rounded-[18px] p-[1px] bg-[var(--gradientBorder-gradient)];
 
-  mask:
-    linear-gradient(#000, #000) content-box,
-    linear-gradient(#000, #000);
+  mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
   mask-composite: exclude;
 }
 

@@ -1,7 +1,7 @@
-import type { FC } from 'react';
 import Accept from '@/assets/accept.svg';
 import Copy from '@/assets/copy.svg';
 import Decline from '@/assets/decline.svg';
+import type { FC } from 'react';
 import styles from './styles.module.css';
 
 const Menu: FC = () => {

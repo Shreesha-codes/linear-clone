@@ -1,8 +1,8 @@
 'use client';
 
+import { cn, getInitials } from '@/lib/utils';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import * as React from 'react';
-import { cn, getInitials } from '@/lib/utils';
 
 /**
  * Avatar Root Component

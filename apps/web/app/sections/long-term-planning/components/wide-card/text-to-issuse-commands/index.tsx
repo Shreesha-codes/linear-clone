@@ -1,6 +1,6 @@
-import type { FC } from 'react';
 import Convert from '@/assets/convert.svg';
 import Placeholder from '@/assets/placeholder-1.svg';
+import type { FC } from 'react';
 import styles from './styles.module.css';
 
 const TextToIssueCommands: FC = () => {

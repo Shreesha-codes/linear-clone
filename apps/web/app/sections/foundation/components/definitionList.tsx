@@ -1,5 +1,5 @@
-import type { FC } from 'react';
 import type { FoundationList } from '@/lib/constant';
+import type { FC } from 'react';
 import styles from '../styles.module.css';
 
 type Props = {

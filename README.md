@@ -248,6 +248,10 @@ See [CODE_REVIEW_FIXES.md](./CODE_REVIEW_FIXES.md) for recent security improveme
 - [PHASE1_COMPLETE.md](./PHASE1_COMPLETE.md) - Project setup and configuration
 - [PHASE2_COMPLETE.md](./PHASE2_COMPLETE.md) - Database schema design and migrations
 - [PHASE3.5_AND_3.6_COMPLETE.md](./PHASE3.5_AND_3.6_COMPLETE.md) - Middleware and environment setup
+- [PHASE4.7_COMPLETE.md](./PHASE4.7_COMPLETE.md) - Issue management pages (list, board, detail) ✅
+
+### Project Status
+- [MVP_STATUS.md](./MVP_STATUS.md) - **Comprehensive MVP progress report** (~45% complete)
 
 ### Package Documentation
 - [packages/database/README.md](./packages/database/README.md) - Database setup and schema docs
@@ -345,11 +349,26 @@ See [PHASE2_COMPLETE.md](./PHASE2_COMPLETE.md) for database details.
   - Authentication layout with centered card design
   - Main app layout with sidebar + top navigation structure
   - Prepared for command palette and notifications integration
+- [x] **Phase 4.5**: Main App Navigation ✅
+  - Sidebar with workspace/team switcher, navigation links, collapsible state
+  - TopNav with breadcrumb, search trigger, notifications, user menu
+- [x] **Phase 4.7**: Issue Management Pages ✅ (100% Complete)
+  - **3 Pages (702 lines total)**:
+    - `issues/page.tsx` (153 lines) - List view with 7-column table, filters, client-side filtering
+    - `issues/board/page.tsx` (260 lines) - Kanban board with drag-and-drop, 5 status columns
+    - `issue/[issueId]/page.tsx` (289 lines) - Detail page with inline editing, property sidebar
+  - **5 Components (440+ lines total)**:
+    - `IssueCard.tsx` (89 lines) - Compact card for board view with labels, avatars
+    - `IssueRow.tsx` (126 lines) - Table row for list view with 7 columns
+    - `IssueFilters.tsx` (120 lines) - Filter panel with active badges, clear all
+    - `IssuePriorityIcon.tsx` (65 lines) - Priority indicators with Linear-style icons
+    - `IssueStatusBadge.tsx` (58 lines) - Status badges with color coding
+  - **Dependencies**: @dnd-kit/core, @dnd-kit/sortable, react-markdown, date-fns
+  - **Total**: ~900 lines of production-ready code
 - [ ] Complete remaining UI components (Select, DropdownMenu, Popover, Checkbox, RadioGroup)
-- [ ] Complete remaining UI components (Select, DropdownMenu, Popover, Checkbox, RadioGroup)
-- [x] Sidebar and TopNav component implementations
-- [x] Authentication pages
-- [ ] Issue management pages
+- [ ] Authentication pages (Phase 4.4)
+- [ ] Command Palette (Phase 4.6)
+- [ ] Issue Form component with Markdown editor (Phase 4.8)
 
 See sections 4.1, 4.2, and 4.3 in [AGENTS.md](./AGENTS.md) for completed features.
 
@@ -358,13 +377,27 @@ See sections 4.1, 4.2, and 4.3 in [AGENTS.md](./AGENTS.md) for completed feature
   - Proper body forwarding to Hono.js
   - All routes tested and working
 
+**Phase 4: Frontend Development** (75% Complete)
+- [x] Design system and UI components (Phase 4.1-4.3)
+- [x] Main app navigation (Phase 4.5)
+- [x] Issue management pages (Phase 4.7) ✅
+- [ ] Authentication pages (Phase 4.4)
+- [ ] Command palette (Phase 4.6)
+- [ ] Issue form with React Hook Form + Zod (Phase 4.8)
+- [ ] Project management (Phase 4.9)
+- [ ] Cycle management (Phase 4.10)
+- [ ] Comments system (Phase 4.11)
+- [ ] Notification system (Phase 4.12)
 
-- [ ] Backend API development (Phase 3)
-- [ ] Frontend development - Phase 4.3 onwards
-- [ ] Authentication with Better Auth
-- [ ] Workspace & Team management routes (Phase 3.2)
-- [ ] Issue tracking routes (Phase 3.3)
-- [ ] Frontend development (Phase 4)
+**Phase 3: Backend API** (60% Complete)
+- [x] Authentication system (Phase 3.1) ✅
+- [x] API route handlers (Phase 3.2) ✅
+- [x] Business logic services (Phase 3.3) ✅
+- [x] WebSocket real-time updates (Phase 3.4) ✅
+- [x] Middleware layer (Phase 3.5) ✅
+- [x] Environment configuration (Phase 3.6) ✅
+- [ ] Route integration testing (Phase 3.7)
+- [ ] Comprehensive test coverage (Phase 3.8)
 
 - [x] **Phase 4.1-4.4: Frontend Authentication** ✅ (100% Complete)
   - Design system (Tailwind v4, UI components)

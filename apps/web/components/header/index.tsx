@@ -1,8 +1,8 @@
+import Logo from '@/assets/logo.svg';
+import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import type { FC } from 'react';
-import Logo from '@/assets/logo.svg';
-import { cn } from '@/lib/utils';
 import styles from './styles.module.css';
 
 const Header: FC = () => {

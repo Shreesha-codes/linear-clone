@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import type { FC } from 'react';
 import {
   BentoGrid,
   BentoGridFeatureLookupWrapper,
@@ -13,6 +10,9 @@ import BentoGridCardRight from '@/components/bento-grid/components/bento-grid-ca
 import BentoGridFeatureLookUpCard from '@/components/bento-grid/components/bento-grid-feature-lookup-card';
 import LayoutWrapper from '@/components/layout-wrapper';
 import SectionHeading from '@/components/sectionHeading';
+import Image from 'next/image';
+import Link from 'next/link';
+import type { FC } from 'react';
 import FirstCard from './components/first-card';
 import SecondCard from './components/second-card';
 import WideCard from './components/wide-card';

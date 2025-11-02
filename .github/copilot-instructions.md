@@ -24,7 +24,7 @@
 
 This is a **Linear.app clone** built as a fullstack project management application with real-time collaboration. The project is in early development, bootstrapped from a Turborepo template with ambitious plans detailed in `AGENTS.md`.
 
-**Current State**: Production-ready monorepo with Next.js app (`web`), Hono.js backend (`api`), and complete database package (`database`) with Drizzle ORM. **Phase 1, 2, 3 (100%) & Phase 4 (50%) complete** - project setup, database schema, complete backend API with authentication, services, WebSocket, middleware, and frontend authentication with landing page integration.
+**Current State**: Production-ready monorepo with Next.js app (`web`), Hono.js backend (`api`), and complete database package (`database`) with Drizzle ORM. **Phase 1, 2, 3 (60%), & 4 (75%) complete** - project setup, database schema, core backend API with authentication/services/WebSocket/middleware, design system with 12 UI components, 5 Zustand stores, layouts with Sidebar+TopNav, and **Phase 4.7 Issue Management Pages (100% complete)** including list view (153 lines), Kanban board with drag-and-drop (260 lines), detail page (289 lines), and 5 reusable components (~440 lines total).
 
 **Production Readiness Goal**: Every component should be built with production scalability in mind - proper error boundaries, retry logic, circuit breakers, and observability hooks.
 
@@ -46,14 +46,21 @@ linear-clone/
 
 **Removed**: `docs` app (unnecessary for Linear clone), `eslint-config` package (replaced with Biome.js)
 
-**Phase 1, 2 & 3 Complete**:
+**Phase 1, 2, 3, & 4 Progress**:
 
-- Phase 1: Turborepo setup, Biome.js, Vitest, Next.js with Tailwind v3, Hono.js backend, database package
-- Phase 2: Database schema with 15 tables (users with passwordHash, sessions, workspaces, teams, projects, cycles, issues, labels, comments, attachments, activity logs, notifications), 17 performance indexes, transaction utilities, query builders
-- Phase 3: Backend API with authentication (JWT + bcrypt, 17/17 tests passing), WebSocket real-time updates, all routes/services implemented
-- Phase 4.1-4.3: Frontend foundation with design system (12 UI components), state management (5 Zustand stores), layouts (Sidebar + TopNav)
+- Phase 1: Turborepo setup, Biome.js, Vitest, Next.js with Tailwind v3, Hono.js backend, database package ✅
+- Phase 2: Database schema with 15 tables (users with passwordHash, sessions, workspaces, teams, projects, cycles, issues, labels, comments, attachments, activity logs, notifications), 17 performance indexes, transaction utilities, query builders ✅
+- Phase 3: Backend API with authentication (JWT + bcrypt, 17/17 tests passing), WebSocket real-time updates, all routes/services implemented ✅ (60%)
+- Phase 4.1-4.3: Frontend foundation with design system (12 UI components), state management (5 Zustand stores), layouts (Sidebar + TopNav) ✅
+- **Phase 4.7: Issue Management Pages** ✅ (100% complete)
+  - Issues list view with 7-column table, filters, view toggle (153 lines)
+  - Kanban board with drag-and-drop (@dnd-kit), 5 status columns (260 lines)
+  - Issue detail page with inline editing, property sidebar, comments/activity placeholders (289 lines)
+  - IssueCard (89 lines), IssueRow (126 lines), IssueFilters (120 lines), IssuePriorityIcon (65 lines), IssueStatusBadge (58 lines)
+  - Dependencies: @dnd-kit/core, @dnd-kit/sortable, react-markdown, date-fns
+  - Total: ~900 lines of production-ready code
 
-**Current State**: Ready for Phase 4.4 - Authentication Pages Implementation
+**Current State**: Phase 4 at 75% completion. Next: Phase 4.4 Authentication Pages, Phase 4.6 Command Palette, Phase 4.8 IssueForm (with React Hook Form + Zod)
 
 ### Technology Stack
 
@@ -73,13 +80,18 @@ linear-clone/
 - Auth: ✅ JWT + Bcrypt (17/17 tests passing)
 - Validation: Zod 3.23.8
 - Testing: Vitest 2.1.4 (comprehensive test coverage required)
+- WebSockets: ✅ ws 8.18.0 (real-time updates, room-based pub/sub)
+- Drag & Drop: ✅ @dnd-kit/core + @dnd-kit/sortable (Kanban board)
+- Markdown: ✅ react-markdown (issue descriptions)
+- Date Handling: ✅ date-fns (formatting utilities)
+- UI Components: ✅ Radix UI primitives (Avatar, Badge, Button, Dialog, Tooltip, Textarea)
+- State Management: ✅ Zustand (5 stores: auth, workspace, team, issue, ui)
 
 **Planned** (per `AGENTS.md`):
 
-- Backend: WebSockets for real-time features
-- UI: Radix UI primitives (to be installed)
-- State: Zustand (to be installed)
-- Forms: React Hook Form + Zod (to be installed)
+- Forms: React Hook Form + Zod (to be installed for Phase 4.8)
+- Remaining UI: Select, DropdownMenu, Popover, Checkbox, RadioGroup
+- Command Palette: Command component (Phase 4.6)
 
 ## Development Workflows
 
