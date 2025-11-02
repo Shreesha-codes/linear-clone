@@ -33,52 +33,71 @@ export const { signIn, signUp, signOut, useSession, getSession, updateUser } = a
 export const authAdapter = {
   /**
    * Register a new user
-   * Maps Better Auth signup to our POST /api/auth/register endpoint
+   * Maps Better Auth signup to our POST /api/v1/auth/register endpoint
    */
   async register(data: { email: string; password: string; name: string }) {
-    const response = await fetch(`${baseURL}/api/auth/register`, {
+    console.log('[Auth] Registering user:', { email: data.email, name: data.name });
+    const url = `${baseURL}/api/v1/auth/register`;
+    console.log('[Auth] POST', url);
+    
+    const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
       credentials: 'include',
     });
 
+    console.log('[Auth] Register response:', response.status, response.statusText);
+
     if (!response.ok) {
       const error = await response.json();
+      console.error('[Auth] Register error:', error);
       throw new Error(error.error?.message || 'Registration failed');
     }
 
-    return response.json();
+    const result = await response.json();
+    console.log('[Auth] Register success');
+    return result;
   },
 
   /**
    * Login with email and password
-   * Maps to our POST /api/auth/login endpoint
+   * Maps to our POST /api/v1/auth/login endpoint
    */
   async login(data: { email: string; password: string }) {
-    const response = await fetch(`${baseURL}/api/auth/login`, {
+    console.log('[Auth] Logging in user:', data.email);
+    const url = `${baseURL}/api/v1/auth/login`;
+    console.log('[Auth] POST', url);
+    
+    const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
       credentials: 'include',
     });
 
+    console.log('[Auth] Login response:', response.status, response.statusText);
+
     if (!response.ok) {
       const error = await response.json();
+      console.error('[Auth] Login error:', error);
       throw new Error(error.error?.message || 'Login failed');
     }
 
-    return response.json();
+    const result = await response.json();
+    console.log('[Auth] Login success');
+    return result;
   },
 
   /**
    * Logout the current user
-   * Maps to our POST /api/auth/logout endpoint
+   * Maps to our POST /api/v1/auth/logout endpoint
    */
   async logout() {
     const token = localStorage.getItem('authToken');
+    console.log('[Auth] Logging out');
 
-    const response = await fetch(`${baseURL}/api/auth/logout`, {
+    const response = await fetch(`${baseURL}/api/v1/auth/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -89,27 +108,31 @@ export const authAdapter = {
 
     if (!response.ok) {
       const error = await response.json();
+      console.error('[Auth] Logout error:', error);
       throw new Error(error.error?.message || 'Logout failed');
     }
 
     // Clear local storage
     localStorage.removeItem('authToken');
+    console.log('[Auth] Logout success');
 
     return response.json();
   },
 
   /**
    * Get current user session
-   * Maps to our GET /api/auth/me endpoint
+   * Maps to our GET /api/v1/auth/me endpoint
    */
   async getCurrentUser() {
     const token = localStorage.getItem('authToken');
 
     if (!token) {
+      console.log('[Auth] No token found in localStorage');
       return null;
     }
 
-    const response = await fetch(`${baseURL}/api/auth/me`, {
+    console.log('[Auth] Getting current user');
+    const response = await fetch(`${baseURL}/api/v1/auth/me`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -119,12 +142,14 @@ export const authAdapter = {
     });
 
     if (!response.ok) {
+      console.error('[Auth] Get current user failed:', response.status);
       // Token might be expired or invalid
       localStorage.removeItem('authToken');
       return null;
     }
 
     const data = await response.json();
+    console.log('[Auth] Current user retrieved');
     return data.data.user;
   },
 };
