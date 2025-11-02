@@ -1,9 +1,9 @@
+import Image from 'next/image';
+import type { FC } from 'react';
 import Comment from '@/assets/comment.svg';
 import More from '@/assets/more.svg';
 import Placeholder from '@/assets/placeholder-2.svg';
 import Tick from '@/assets/tick.svg';
-import Image from 'next/image';
-import type { FC } from 'react';
 import styles from './styles.module.css';
 
 const InlineComments: FC = () => {

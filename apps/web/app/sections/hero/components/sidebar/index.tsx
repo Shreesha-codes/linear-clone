@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import Favourite from '@/assets/favourite.svg';
 import InboxMyIssue from '@/assets/inbox-my-issue.svg';
 import OtherTeams from '@/assets/other-teams.svg';
@@ -7,7 +8,6 @@ import SidebarLogo from '@/assets/sidebar-logo.svg';
 import Workspace from '@/assets/workspace.svg';
 import Yourspace from '@/assets/your-team.svg';
 import IllustrateAnimate from '@/components/illustrate-animate';
-import type { FC } from 'react';
 import styles from './styles.module.css';
 
 const Sidebar: FC = () => {

@@ -1,7 +1,7 @@
 'use client';
 
-import { useUIStore } from '@/stores/ui-store';
 import * as React from 'react';
+import { useUIStore } from '@/stores/ui-store';
 
 interface ThemeProviderProps {
   children: React.ReactNode;

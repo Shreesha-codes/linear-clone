@@ -1,6 +1,6 @@
-import type { Team, TeamMember } from '@/types';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
+import type { Team, TeamMember } from '@/types';
 
 /**
  * Team State Interface

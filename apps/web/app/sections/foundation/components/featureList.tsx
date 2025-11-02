@@ -1,8 +1,8 @@
+import type { FC, ReactNode } from 'react';
 import Complaints from '@/assets/complaints.svg';
 import Control from '@/assets/control.svg';
 import Secure from '@/assets/secure.svg';
 import Support from '@/assets/support.svg';
-import type { FC, ReactNode } from 'react';
 import styles from '../styles.module.css';
 
 const FeatureList: FC = () => {

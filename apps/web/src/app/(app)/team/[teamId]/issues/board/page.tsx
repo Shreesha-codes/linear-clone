@@ -1,19 +1,13 @@
 'use client';
 
-import { IssueCard } from '@/components/issues/IssueCard';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { useIssueStore } from '@/stores/issue-store';
-import { useTeamStore } from '@/stores/team-store';
-import type { Issue, IssueStatus } from '@/types';
 import {
+  closestCorners,
   DndContext,
   type DragEndEvent,
   DragOverlay,
   type DragStartEvent,
   KeyboardSensor,
   PointerSensor,
-  closestCorners,
   useDroppable,
   useSensor,
   useSensors,
@@ -23,6 +17,12 @@ import { CSS } from '@dnd-kit/utilities';
 import { LayoutGrid, List, Plus } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { IssueCard } from '@/components/issues/IssueCard';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { useIssueStore } from '@/stores/issue-store';
+import { useTeamStore } from '@/stores/team-store';
+import type { Issue, IssueStatus } from '@/types';
 
 interface PageProps {
   params: {
@@ -47,13 +47,7 @@ const STATUS_COLUMNS: {
  * Sortable Issue Card Component
  * Makes an issue card draggable
  */
-function SortableIssueCard({
-  issue,
-  teamId,
-}: {
-  issue: Issue;
-  teamId: string;
-}) {
+function SortableIssueCard({ issue, teamId }: { issue: Issue; teamId: string }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: issue.id,
   });

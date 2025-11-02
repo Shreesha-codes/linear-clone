@@ -1,5 +1,5 @@
-import EditorContent from '@/assets/editor-content.svg';
 import type { FC } from 'react';
+import EditorContent from '@/assets/editor-content.svg';
 import CollaborativeDocsCard from '../collaborative-docs-card';
 import InlineComments from '../inline-comments';
 import TextToIssueCommands from '../text-to-issuse-commands';

@@ -1,6 +1,6 @@
+import type { FC } from 'react';
 import LayoutWrapper from '@/components/layout-wrapper';
 import SectionHeading from '@/components/sectionHeading';
-import type { FC } from 'react';
 import Carousel from './components/carousel';
 import styles from './styles.module.css';
 

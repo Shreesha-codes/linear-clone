@@ -1,8 +1,8 @@
 'use client';
 
+import type { FC } from 'react';
 import { Badge } from '@/components/ui/badge';
 import type { IssueStatus } from '@/types';
-import type { FC } from 'react';
 
 interface IssueStatusBadgeProps {
   status: IssueStatus;

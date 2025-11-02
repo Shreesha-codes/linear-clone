@@ -1,5 +1,5 @@
-import { modernProductCards } from '@/lib/constant';
 import type { FC } from 'react';
+import { modernProductCards } from '@/lib/constant';
 import CarouselCard from '../carousel-card';
 import styles from './styles.module.css';
 

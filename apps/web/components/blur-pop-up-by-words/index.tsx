@@ -1,8 +1,8 @@
 'use client';
 
-import { blurPopUp } from '@/lib/animations';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
+import { blurPopUp } from '@/lib/animations';
 
 type Props = {
   text: string;

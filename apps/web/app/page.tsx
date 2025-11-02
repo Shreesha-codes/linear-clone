@@ -1,5 +1,7 @@
-import AmbientLighting from '@/components/ambient-lighting';
 import type { FC } from 'react';
+import AmbientLighting from '@/components/ambient-lighting';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 import Collaborate from './sections/collaborate';
 import Customers from './sections/customers';
 import Foundation from './sections/foundation';
@@ -11,17 +13,21 @@ import PreFooter from './sections/prefooter';
 
 const Home: FC = () => {
   return (
-    <main className=" min-h-screen pt-[calc(var(--header-top)+var(--header-height))]">
-      <AmbientLighting />
-      <Hero />
-      <Customers />
-      <ModernProductTeams />
-      <LongTermPlanning />
-      <IssueTracking />
-      <Collaborate />
-      <Foundation />
-      <PreFooter />
-    </main>
+    <>
+      <Header />
+      <main className=" min-h-screen pt-[calc(var(--header-top)+var(--header-height))]">
+        <AmbientLighting />
+        <Hero />
+        <Customers />
+        <ModernProductTeams />
+        <LongTermPlanning />
+        <IssueTracking />
+        <Collaborate />
+        <Foundation />
+        <PreFooter />
+      </main>
+      <Footer />
+    </>
   );
 };
 

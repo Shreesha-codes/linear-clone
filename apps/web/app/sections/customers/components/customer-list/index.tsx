@@ -1,5 +1,6 @@
 'use client';
 
+import { type FC, useEffect, useState } from 'react';
 import Logo1 from '@/assets/logo-1.svg';
 import Logo2 from '@/assets/logo-2.svg';
 import Logo3 from '@/assets/logo-3.svg';
@@ -18,7 +19,6 @@ import Logo15 from '@/assets/logo-15.svg';
 import Logo16 from '@/assets/logo-16.svg';
 import Logo17 from '@/assets/logo-17.svg';
 import Logo18 from '@/assets/logo-18.svg';
-import { type FC, useEffect, useState } from 'react';
 import GridCell from './grid-cell';
 import styles from './styles.module.css';
 

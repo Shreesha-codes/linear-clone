@@ -1,5 +1,10 @@
 'use client';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Calendar } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
@@ -12,11 +17,6 @@ import {
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import type { Issue, IssuePriority, IssueStatus } from '@/types';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Calendar } from 'lucide-react';
-import { useCallback, useEffect, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { z } from 'zod';
 
 // Validation schema matching database constraints
 const issueFormSchema = z.object({

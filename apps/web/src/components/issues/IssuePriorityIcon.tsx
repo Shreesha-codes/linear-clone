@@ -1,8 +1,8 @@
 'use client';
 
-import type { IssuePriority } from '@/types';
 import { AlertCircle, ArrowDown, ChevronUp, Circle, SignalHigh } from 'lucide-react';
 import type { FC } from 'react';
+import type { IssuePriority } from '@/types';
 
 interface IssuePriorityIconProps {
   priority: IssuePriority;

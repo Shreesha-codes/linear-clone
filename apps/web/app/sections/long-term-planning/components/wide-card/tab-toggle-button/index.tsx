@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@/lib/utils';
 import type { FC } from 'react';
+import { cn } from '@/lib/utils';
 import styles from './styles.module.css';
 
 type Props = {

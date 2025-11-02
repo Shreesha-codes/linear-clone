@@ -24,8 +24,9 @@
       "@/lib/*": ["./src/lib/*", "./lib/*"],
       "@/app/*": ["./app/*", "./src/app/*"],
       "@/assets/*": ["./assets/*"],
-      "@/stores/*": ["./src/stores/*"],
-      "@/types/*": ["./src/types/*"]
+      "@/stores/*": ["./src/stores/*", "./stores/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/hooks/*": ["./src/hooks/*", "./hooks/*"]
     },
     "target": "ES2017"
   },

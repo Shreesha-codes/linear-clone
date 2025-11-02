@@ -1,33 +1,51 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Responsive breakpoints */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
-
-  /* Animations for accordion */
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-}
-
-@keyframes accordion-down {
-  from {
-    height: 0;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 263 70% 50%;
+    --radius: 0.5rem;
   }
-  to {
-    height: var(--radix-accordion-content-height);
-  }
-}
 
-@keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-  }
-  to {
-    height: 0;
+  .dark {
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263 70% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 263 70% 60%;
   }
 }
 
@@ -38,55 +56,8 @@
   src: url("/static/fonts/inter-var-4-latin.woff2") format("woff2");
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
-}
-
 body {
-  font-family: var(--regular-font);
+  font-family: var(--font-sans);
   background: var(--color-bg-primary);
 }
 
@@ -137,10 +108,12 @@ body::-webkit-scrollbar {
   --radius-rounded: 9999px;
   --radius-circle: 50%;
   --font-monospace: ui-monospace, "SF Mono", "Menlo", monospace;
-  --font-regular: "Linear", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
-  --font-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI",
-    "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
+  --font-regular:
+    "Linear", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+  --font-emoji:
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Twemoji Mozilla",
+    "Noto Color Emoji", "Android Emoji";
   --font-weight-regular: 400;
   --font-weight-medium: 510;
   --font-weight-semibold: 590;
@@ -215,41 +188,16 @@ body::-webkit-scrollbar {
   --font-size-title2: 1.5rem;
   --font-size-title3: 1.25rem;
 
-  --header-bg: hsla(0, 0%, 4%, 0.8);
-  --header-border: hsla(0, 0%, 100%, 0.08);
-  --color-bg-primary: #08090a;
-  --color-bg-secondary: #161616;
-  --color-bg-tertiary: #1c1c1c;
-  --color-bg-quaternary: #232323;
-  --color-bg-quinary: #282828;
-  --color-border-primary: #23252a;
-  --color-border-secondary: #292b30;
-  --color-border-tertiary: #2c2e33;
-  --color-text-primary: #fff;
-  --color-text-secondary: #e3e4e6;
-  --color-text-tertiary: #969799;
-  --color-text-quaternary: #595a5c;
-  --color-link-primary: #7281ff;
-  --color-link-hover: #fff;
-  --color-brand-bg: #5e69d1;
-  --color-brand-text: #fff;
-  --color-selection-bg: #474747;
-  --color-selection-text: #fff;
-  --color-selection-dim: hsla(0, 0%, 100%, 0.2);
-  --focus-ring-color: hsla(0, 0%, 100%, 0.4);
-  --color-overlay-dim-rgb: 255, 255, 255;
-  --color-overlay-primary: rgba(0, 0, 0, 0.4);
-  --color-alpha: 255;
-  --shadow-low: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0px 4px 24px rgba(0, 0, 0, 0.2);
-  --shadow-high: 0px 7px 32px rgba(0, 0, 0, 0.35);
-  --shadow-stack-low:
-    0px -1px 1px 0px rgba(0, 0, 0, 0.11) inset,
-    0px 8px 2px 0px transparent, 0px 5px 2px 0px rgba(0, 0, 0, 0.01),
-    0px 3px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 1px 0px rgba(0, 0, 0, 0.07),
-    0px 0px 1px 0px rgba(0, 0, 0, 0.08);
-  --icon-grayscale-image-filter: grayscale(100%) brightness(400%);
-  --bento-border: hsla(0, 0%, 100%, 0.03);
+  --header-bg: hsla(0, 0%, 100%, 0.8);
+  --header-border: hsla(0, 0%, 0%, 0.1);
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f8f8;
+  --color-bg-tertiary: #f0f0f0;
+  --color-border-primary: #e5e5e5;
+  --color-border-secondary: #d4d4d4;
+  --color-text-primary: #171717;
+  --color-text-secondary: #404040;
+  --color-text-tertiary: #737373;
 }
 
 @media (max-width: 768px) {

@@ -1,8 +1,8 @@
+import type { FC } from 'react';
 import UnderTheHood from '@/assets/underToHood.svg';
 import LayoutWrapper from '@/components/layout-wrapper';
 import SectionHeading from '@/components/sectionHeading';
 import { foundationList } from '@/lib/constant';
-import type { FC } from 'react';
 import DefinitionList from './components/definitionList';
 import FeatureList from './components/featureList';
 import styles from './styles.module.css';

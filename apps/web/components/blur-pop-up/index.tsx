@@ -1,8 +1,8 @@
 'use client';
 
-import { blurPopUp } from '@/lib/animations';
 import { motion } from 'framer-motion';
 import type { FC, ReactNode } from 'react';
+import { blurPopUp } from '@/lib/animations';
 
 type Props = {
   children: ReactNode;

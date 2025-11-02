@@ -1,8 +1,8 @@
-import { footerSections } from '@/lib/constant';
 import Link from 'next/link';
 import type { FC } from 'react';
 import { FaGithub, FaSlack, FaYoutube } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import { footerSections } from '@/lib/constant';
 import FooterSection from './footerSection';
 import Logo from './logo.svg';
 import styles from './styles.module.css';

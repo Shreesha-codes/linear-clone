@@ -1,5 +1,5 @@
-import Graph from '@/assets/graph.svg';
 import type { FC } from 'react';
+import Graph from '@/assets/graph.svg';
 import styles from './styles.module.css';
 
 const FirstCard: FC = () => {

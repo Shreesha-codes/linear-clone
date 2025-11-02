@@ -1,11 +1,11 @@
+import Image from 'next/image';
+import type { FC } from 'react';
 import BlueDiamond from '@/assets/blue-diamond.svg';
 import Figma from '@/assets/figma.svg';
 import Funnal from '@/assets/funnal.svg';
 import Person from '@/assets/person.svg';
 import Progress from '@/assets/progress.svg';
 import YellowDiamond from '@/assets/yellow-diamond.svg';
-import Image from 'next/image';
-import type { FC } from 'react';
 import styles from './styles.module.css';
 
 const FirstCard: FC = () => {

@@ -112,10 +112,21 @@ const httpServer = createServer(async (req, res) => {
       }
     }
 
+    // Read request body for POST/PUT/PATCH requests
+    let body: string | undefined;
+    if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
+      const chunks: Buffer[] = [];
+      for await (const chunk of req) {
+        chunks.push(chunk);
+      }
+      body = Buffer.concat(chunks).toString();
+    }
+
     // Forward request to Hono
     const request = new Request(url, {
       method: req.method || 'GET',
       headers,
+      body: body,
     });
 
     const response = await app.fetch(request);

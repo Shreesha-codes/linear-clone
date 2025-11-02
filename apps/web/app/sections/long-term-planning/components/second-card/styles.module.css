@@ -17,7 +17,8 @@
 
 .project__update__card::after {
   @apply content-[''] pointer-events-none absolute inset-0 z-[1];
-  background: linear-gradient(to bottom, var(--color-bg-primary) 0, transparent 30%),
+  background:
+    linear-gradient(to bottom, var(--color-bg-primary) 0, transparent 30%),
     linear-gradient(to right, transparent 60%, var(--color-bg-primary) 100%);
 }
 

@@ -1,5 +1,6 @@
 'use client';
 
+import { Bell, Menu, Plus, Search } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,7 +12,6 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useAuthStore } from '@/stores/authStore';
 import { useUIStore } from '@/stores/uiStore';
-import { Bell, Menu, Plus, Search } from 'lucide-react';
 
 export function TopNav() {
   const { user } = useAuthStore();
@@ -52,7 +52,7 @@ export function TopNav() {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-8 w-8 rounded-full">
               <Avatar className="h-8 w-8">
-                <AvatarImage src={user?.avatarUrl} alt={user?.name} />
+                <AvatarImage src={user?.avatar_url || undefined} alt={user?.name} />
                 <AvatarFallback>{user?.name?.[0] || 'U'}</AvatarFallback>
               </Avatar>
             </Button>

@@ -1,6 +1,6 @@
+import type { FC } from 'react';
 import People from '@/assets/people.svg';
 import Placeholder from '@/assets/placeholder-1.svg';
-import type { FC } from 'react';
 import styles from './styles.module.css';
 
 const CollaborativeDocsCard: FC = () => {
