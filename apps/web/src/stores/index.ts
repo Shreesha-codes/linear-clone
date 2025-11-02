@@ -4,6 +4,7 @@
  */
 
 export * from './auth-store';
+export * from './cycle-store';
 export * from './issue-store';
 export * from './project-store';
 export * from './team-store';

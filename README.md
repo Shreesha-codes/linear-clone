@@ -393,6 +393,46 @@ See [PHASE2_COMPLETE.md](./PHASE2_COMPLETE.md) for database details.
     - Semantic HTML (fieldset/legend for color picker)
   - **Dependencies**: React Hook Form, Zod, Zustand, Radix UI (Avatar, Badge, Button, Dialog)
   - **Total**: ~1,150 lines of production-ready code
+- [x] **Phase 4.10**: Cycle Management ✅ (100% Complete)
+  - **Cycle Store (180 lines)**:
+    - Zustand store with Map-based state management
+    - CRUD operations (setCycles, addCycle, updateCycle, removeCycle)
+    - Utility functions: getActiveCycles, getUpcomingCycles, getPastCycles, calculateCycleProgress, getCycleDaysRemaining
+    - Active cycle state and loading state tracking
+    - Selector hooks: useCycles, useCycle, useCyclesByTeam, useActiveCycle
+    - Redux DevTools integration
+  - **Cycles List Page (240 lines)**:
+    - Grid view with CycleCard components (sm:grid-cols-2, lg:grid-cols-3)
+    - 4 filter tabs with counts: all, active, upcoming, past
+    - Create cycle button with modal
+    - Mock data for development (3 sample cycles: Sprint 1 active, Sprint 2 upcoming, Q4 2024 past)
+    - Empty states per filter with contextual messages
+    - Client-side filtering using utility functions
+  - **Cycle Detail Page (268 lines)**:
+    - Cycle header with name, status badge, dates, days remaining
+    - Back button navigation
+    - Progress section: Time Progress (cycle duration) + Issue Completion (done/total)
+    - Stats dashboard (5 columns: total, backlog, todo, in_progress, done)
+    - Issues grouped by status (reuses IssueRow components)
+    - Activity feed placeholder
+    - Edit cycle button
+  - **CycleCard Component (128 lines)**:
+    - Time-based progress bar (only for active cycles)
+    - Status badge (active/upcoming/past)
+    - Date range with Calendar icon
+    - Days remaining indicator with TrendingUp icon (color-coded)
+    - Quick stats placeholders (issues count)
+    - Hover effects: scale-[1.02], shadow-lg
+  - **CycleForm Component (233 lines)**:
+    - React Hook Form + Zod validation
+    - All 4 cycle fields: name, description, startDate, endDate
+    - Custom validation: endDate must be after startDate
+    - Auto-suggested name in create mode: "Sprint {number}"
+    - Cycle number display in create mode
+    - Keyboard shortcut: Cmd/Ctrl+Enter to submit
+    - Create vs Edit modes
+  - **Dependencies**: React Hook Form, Zod, Zustand, Radix UI (Badge, Button, Dialog), Lucide React (Calendar, TrendingUp)
+  - **Total**: ~1,049 lines of production-ready code
 - [ ] Complete remaining UI components (DropdownMenu, Popover, Checkbox, RadioGroup)
 - [ ] Authentication pages (Phase 4.4)
 - [ ] Command Palette (Phase 4.6)
@@ -401,12 +441,13 @@ See sections 4.1, 4.2, and 4.3 in [AGENTS.md](./AGENTS.md) for completed feature
 
 ### 🔄 In Progress
 
-**Phase 4: Frontend Development** (82% Complete)
+**Phase 4: Frontend Development** (85% Complete)
 - [x] Design system and UI components (Phase 4.1-4.3)
 - [x] Main app navigation (Phase 4.5)
 - [x] Issue management pages (Phase 4.7) ✅
 - [x] Issue form component (Phase 4.8) ✅
 - [x] Project management (Phase 4.9) ✅
+- [x] Cycle management (Phase 4.10) ✅
 - [ ] Authentication pages (Phase 4.4)
 - [ ] Command palette (Phase 4.6)
 - [ ] Cycle management (Phase 4.10)

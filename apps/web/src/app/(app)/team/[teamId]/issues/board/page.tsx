@@ -47,13 +47,7 @@ const STATUS_COLUMNS: {
  * Sortable Issue Card Component
  * Makes an issue card draggable
  */
-function SortableIssueCard({
-  issue,
-  teamId,
-}: {
-  issue: Issue;
-  teamId: string;
-}) {
+function SortableIssueCard({ issue, teamId }: { issue: Issue; teamId: string }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: issue.id,
   });
