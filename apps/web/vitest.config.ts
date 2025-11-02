@@ -10,6 +10,7 @@ export default defineConfig({
     include: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     exclude: ['node_modules', '.next', 'build'],
     setupFiles: ['./vitest.setup.ts'],
+    passWithNoTests: true, // Don't fail when no tests exist
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
