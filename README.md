@@ -1,220 +1,147 @@
-# Linear Clone# Linear Clone
+# Linear Clone
 
+> A production-ready, high-fidelity clone of Linear.app built with modern fullstack technologies.
 
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)](https://www.typescriptlang.org/)
 
-> A production-ready, high-fidelity clone of Linear.app built with modern fullstack technologies.> A production-ready, high-fidelity clone of Linear.app built with modern fullstack technologies.
+[![Next.js](https://img.shields.io/badge/Next.js-16.0-black)](https://nextjs.org/)
 
+[![Hono](https://img.shields.io/badge/Hono-4.6-orange)](https://hono.dev/)
 
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-blue)](https://www.postgresql.org/)
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)](https://www.typescriptlang.org/)[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)](https://www.typescriptlang.org/)
+A fullstack project management application replicating Linear.app's core features with real-time collaboration, issue tracking, and team management.
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.0-black)](https://nextjs.org/)[![Next.js](https://img.shields.io/badge/Next.js-16.0-black)](https://nextjs.org/)
+## ✨ Features
 
-[![Hono](https://img.shields.io/badge/Hono-4.6-orange)](https://hono.dev/)[![Hono](https://img.shields.io/badge/Hono-4.6-orange)](https://hono.dev/)
+- 🔐 **Authentication** - JWT-based auth with Bcrypt password hashing
 
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-blue)](https://www.postgresql.org/)[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-blue)](https://www.postgresql.org/)
+- 📊 **Issue Tracking** - List view, Kanban board, and detailed issue pages
 
+- 🎨 **Modern UI** - Linear-inspired design with dark/light themes
 
+- ⚡ **Real-time Updates** - WebSocket-based live collaboration
 
-A fullstack project management application replicating Linear.app's core features with real-time collaboration, issue tracking, and team management.A fullstack project management application replicating Linear.app's core features with real-time collaboration, issue tracking, and team management.
+- ⌨️ **Keyboard Shortcuts** - Command palette (⌘K) and global shortcuts
 
+- 🏢 **Team Management** - Multi-workspace and team support
 
+- 📱 **Responsive Design** - Works on desktop, tablet, and mobile
 
-## ✨ Features## ✨ Features
+## 🚀 Quick Start
 
+### Prerequisites
 
+- Node.js 18+
+- PostgreSQL 14+
 
-- 🔐 **Authentication** - JWT-based auth with Bcrypt password hashing- 🔐 **Authentication** - JWT-based auth with Bcrypt password hashing
+- npm 11.6.2
 
-- 📊 **Issue Tracking** - List view, Kanban board, and detailed issue pages- 📊 **Issue Tracking** - List view, Kanban board, and detailed issue pages
+### Installation
 
-- 🎨 **Modern UI** - Linear-inspired design with dark/light themes- 🎨 **Modern UI** - Linear-inspired design with dark/light themes
-
-- ⚡ **Real-time Updates** - WebSocket-based live collaboration- ⚡ **Real-time Updates** - WebSocket-based live collaboration
-
-- ⌨️ **Keyboard Shortcuts** - Command palette (⌘K) and global shortcuts- ⌨️ **Keyboard Shortcuts** - Command palette (⌘K) and global shortcuts
-
-- 🏢 **Team Management** - Multi-workspace and team support- 🏢 **Team Management** - Multi-workspace and team support
-
-- 📱 **Responsive Design** - Works on desktop, tablet, and mobile- 📱 **Responsive Design** - Works on desktop, tablet, and mobile
-
-
-
-## 🚀 Quick Start## 🚀 Quick Start
-
-
-
-### Prerequisites### Prerequisites
-
-
-
-- Node.js 18+- Node.js 18+
-
-- PostgreSQL 14+- PostgreSQL 14+
-
-- npm 11.6.2- npm 11.6.2
-
-
-
-### Installation### Installation
-
-
-
-```bash```bash
-
+```bash
 # Clone repository# Clone repository
 
-git clone <your-repo-url>git clone <your-repo-url>
+git clone <your-repo-url>
 
 cd linear-clonecd linear-clone
 
+# Install dependencies
 
+npm install
 
-# Install dependencies# Install dependencies
+# Setup environment variables
 
-npm installnpm install
+cp apps/api/.env.example apps/api/.env
 
-
-
-# Setup environment variables# Setup environment variables
-
-cp apps/api/.env.example apps/api/.envcp apps/api/.env.example apps/api/.env
-
-cp packages/database/.env.example packages/database/.envcp packages/database/.env.example packages/database/.env
-
-# Edit .env files with your database credentials
-
-# Create database
-
-# Create databasecreatedb linear_clone
-
-createdb linear_clone
+cp packages/database/.env.example packages/database/.env
 
 # Run migrations
 
-# Run migrationscd packages/database && npm run db:migrate && cd ../..
+cd packages/database && npm run db:migrate && cd ../..
 
 cd packages/database && npm run db:migrate && cd ../..
 
 # Start development servers
 
-# Start development serversnpm run dev
-
-npm run dev```
+npm run dev
 
 ```
 
 Visit **http://localhost:3000** to see the app.
 
-Visit **http://localhost:3000** to see the app.
-
-## 📚 Documentation
-
 ## 📚 Documentation
 
 - **[PROJECT.md](./PROJECT.md)** - Complete project documentation
-
-- **[PROJECT.md](./PROJECT.md)** - Complete project documentation- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Production deployment guide
-
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Production deployment guide- **[AGENTS.md](./AGENTS.md)** - Implementation guide and roadmap
-
-- **[AGENTS.md](./AGENTS.md)** - Implementation guide and roadmap- **[docs/guides/](./docs/guides/)** - User guides and tutorials
-
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Production deployment guide
+- **[AGENTS.md](./AGENTS.md)** - Implementation guide and roadmap
 - **[docs/guides/](./docs/guides/)** - User guides and tutorials
-
-## �️ Technology Stack
 
 ## 🛠️ Technology Stack
 
 ### Core Technologies
 
-| Category | Technology |- **Package Manager**: npm 11.6.2
-
-|----------|-----------|- **Build System**: Turborepo 2.3.0
-
-| **Frontend** | Next.js 16, React 19, Tailwind CSS 4, Radix UI |- **Frontend**: Next.js 16.0.1 with React 19.2.0 (App Router)
-
-| **Backend** | Hono.js 4.6, Node.js 18+ |- **Backend**: Hono.js 4.6.11
-
-| **Database** | PostgreSQL 14+, Drizzle ORM |- **Database**: PostgreSQL with Drizzle ORM 0.44.7
-
-| **Auth** | JWT, Bcrypt |- **Styling**: Tailwind CSS 4.1.16 (v4 - CSS-first architecture)
-
-| **Real-time** | WebSockets (ws) |- **Code Quality**: Biome.js 1.9.4 (root) + 2.2.0 (web)
-
-| **State** | Zustand |- **Testing**: Vitest 2.1.9
-
-| **Validation** | Zod |- **TypeScript**: 5.6.3
-
-| **Build** | Turborepo |
-
-| **Code Quality** | Biome.js, TypeScript 5.6 |### Backend Stack ✅ Implemented
-
-| **Testing** | Vitest |- **Auth**: JWT tokens + Bcrypt password hashing
-
-- **Validation**: Zod 3.23.8 (schema validation)
+| Category            | Technology                                     | - **Package Manager**: npm 11.6.2                                |
+| ------------------- | ---------------------------------------------- | ---------------------------------------------------------------- |
+| **Package Manager** | npm 11.6.2                                     |
+| **Build System**    | Turborepo 2.3.0                                |
+| **Frontend**        | Next.js 16, React 19, Tailwind CSS 4, Radix UI |
+| **Frontend**        | Next.js 16.0.1 with React 19.2.0 (App Router)  |
+| **Backend**         | Hono.js 4.6, Node.js 18+                       | - **Backend**: Hono.js 4.6.11                                    |
+| **Database**        | PostgreSQL 14+, Drizzle ORM                    | - **Database**: PostgreSQL with Drizzle ORM 0.44.7               |
+| **Auth**            | JWT, Bcrypt                                    | - **Styling**: Tailwind CSS 4.1.16 (v4 - CSS-first architecture) |
+| **Real-time**       | WebSockets (ws)                                | - **Code Quality**: Biome.js 1.9.4 (root) + 2.2.0 (web)          |
+| **State**           | Zustand                                        | - **Testing**: Vitest 2.1.9                                      |
+| **Validation**      | Zod                                            | - **TypeScript**: 5.6.3                                          |
+| **Build**           | Turborepo                                      |                                                                  |
+| **Code Quality**    | Biome.js, TypeScript 5.6                       | ### Backend Stack ✅ Implemented                                 |
+| **Testing**         | Vitest                                         | - **Auth**: JWT tokens + Bcrypt password hashing                 |
+| **Validation**      | Zod 3.23.8 (schema validation)                 |                                                                  |
 
 ## 📁 Project Structure- **Real-time**: WebSockets (ws 8.18.0)
 
 - **Middleware**: CORS, validation, rate limiting, auth, error handling
 
-```
+````
 
 linear-clone/### Frontend Stack ✅ Implemented
-
 ├── apps/- **UI Components**: Radix UI (Select, Dialog, DropdownMenu, Avatar, Popover, etc.)
-
-│   ├── web/                 # Next.js frontend (port 3000)- **State Management**: Zustand 4.5.0 (authStore, workspaceStore, teamStore, uiStore)
-
-│   └── api/                 # Hono.js backend (port 3001)- **Command Palette**: cmdk 1.1.1 (global search and quick actions)
-
+│ ├── web/ # Next.js frontend (port 3000)- **State Management**: Zustand 4.5.0 (authStore, workspaceStore, teamStore, uiStore)
+│ └── api/ # Hono.js backend (port 3001)- **Command Palette**: cmdk 1.1.1 (global search and quick actions)
 ├── packages/- **Forms**: React Hook Form + Zod (authentication forms)
-
-│   ├── database/            # Drizzle ORM schemas & migrations- **Icons**: Lucide React 0.552.0 (consistent iconography)
-
-│   ├── ui/                  # Shared React components- **Date Handling**: date-fns 2.30.0
-
-│   └── typescript-config/   # Shared TypeScript configs
-
-├── docs/                    # Documentation## 📁 Project Structure
-
-├── scripts/                 # Utility scripts
-
-├── docker-compose.yml       # Docker configuration```
-
-├── PROJECT.md               # Detailed documentationlinear-clone/
-
-└── DEPLOYMENT.md            # Deployment guide├── apps/
-
-```│   ├── web/                 # Next.js frontend (port 3000)
-
+│ ├── database/ # Drizzle ORM schemas & migrations- **Icons**: Lucide React 0.552.0 (consistent iconography)
+│ ├── ui/ # Shared React components- **Date Handling**: date-fns 2.30.0
+│ └── typescript-config/ # Shared TypeScript configs
+├── docs/ # Documentation## 📁 Project Structure
+├── scripts/ # Utility scripts
+├── docker-compose.yml # Docker configuration```
+├── PROJECT.md # Detailed documentation linear-clone/
+└── DEPLOYMENT.md # Deployment guide├── apps/
+│ ├── web/                 # Next.js frontend (port 3000)
 │   └── api/                 # Hono.js backend (port 3001)
-
 ## 🔧 Development├── packages/
-
 │   ├── database/            # Drizzle ORM schemas & migrations
-
-```bash│   ├── ui/                  # Shared React components
-
-# Start all apps│   └── typescript-config/   # Shared TypeScript configs
-
-npm run dev├── biome.json               # Biome.js configuration
-
+│   ├── ui/                  # Shared React components
+# Start all apps
+│   └── typescript-config/   # Shared TypeScript configs
+npm run dev
+├── biome.json               # Biome.js configuration
 ├── turbo.json               # Turborepo pipeline config
+# Start specific app
+└── vitest.config.ts         # Root Vitest config
 
-# Start specific app└── vitest.config.ts         # Root Vitest config
-
-npx turbo dev --filter=web```
+npx turbo dev --filter=web
 
 npx turbo dev --filter=api
+````
 
 ## 🛠️ Setup Instructions
 
 # Build all apps
 
-npm run build### Prerequisites
+npm run build
 
-
+### Prerequisites
 
 # Run tests- Node.js 18+ installed
 
@@ -232,9 +159,9 @@ npm run format
 
 # Type check
 
-npm run check-types   ```bash
+npm run check-types ```bash
 
-```   git clone <your-repo-url>
+````git clone <your-repo-url>
 
    cd linear-clone
 
@@ -270,55 +197,45 @@ npm run db:studio   ```bash
 
 ## 🐳 Docker Deployment   # Edit .env with your database credentials
 
-   ```
+````
 
-```bash
-
-# Copy and configure environment   For the database:
+# Copy and configure environment For the database:
 
 cp .env.docker.example .env
 
-# Edit .env with production values   ```bash
+# Edit .env with production values ```bash
 
-   cd packages/database
+cd packages/database
 
-# Build and start services   cp .env.example .env
+# Build and start services cp .env.example .env
 
-docker-compose up -d   # Edit .env with your database credentials
+docker-compose up -d # Edit .env with your database credentials
 
-   ```
+`````
 
 # Run migrations
 
 docker-compose exec api sh -c "cd packages/database && npm run db:migrate"4. **Create the database**
 
+# View logs sql
 
+docker-compose logs -f CREATE DATABASE linear_clone;
 
-# View logs   ```sql
-
-docker-compose logs -f   CREATE DATABASE linear_clone;
-
-```   ```
-
-
+`   `
 
 Services:5. **Run database migrations** (when schemas are created)
 
-- Frontend: http://localhost:3000   ```bash
+- Frontend: http://localhost:3000 ```bash
 
-- Backend: http://localhost:3001   cd packages/database
+- Backend: http://localhost:3001 cd packages/database
 
-- PostgreSQL: localhost:5432   npm run db:generate
+- PostgreSQL: localhost:5432 npm run db:generate
 
-   npm run db:migrate
+  npm run db:migrate
 
-## 📦 API Endpoints   ```
-
-
+## 📦 API Endpoints ```
 
 Base URL: `http://localhost:3001/api/v1`## 🚦 Development
-
-
 
 ### Authentication### Start all apps
 
@@ -329,8 +246,6 @@ Base URL: `http://localhost:3001/api/v1`## 🚦 Development
 - `POST /auth/logout` - Logout usernpm run dev
 
 - `GET /auth/me` - Get current user```
-
-
 
 ### IssuesThis starts:
 
@@ -344,17 +259,13 @@ Base URL: `http://localhost:3001/api/v1`## 🚦 Development
 
 - `DELETE /issues/:id` - Delete issue### Start specific app
 
-
-
 See [PROJECT.md](./PROJECT.md#api-reference) for complete API documentation.```bash
 
 # Frontend only
 
 ## 🧪 Testingnpx turbo dev --filter=web
 
-
-
-```bash# Backend only
+````bash# Backend only
 
 # Run all testsnpx turbo dev --filter=api
 
@@ -378,13 +289,13 @@ npm run test:coveragenpm run test
 
 npx turbo test --filter=apinpm run test:watch
 
-```
+`````
 
 # Run tests with coverage
 
-## 🚢 Production Deploymentnpm run test:coverage
+## 🚢 Production Deployment
 
-
+npm run test:coverage
 
 See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.# Run tests for specific package
 
@@ -405,8 +316,6 @@ npx turbo test --filter=web
 - [ ] Setup SSL/TLS certificates# Lint all code
 
 - [ ] Configure monitoring and loggingnpm run lint
-
-
 
 ## 🤝 Contributing# Lint and auto-fix
 
@@ -438,8 +347,6 @@ npm run check-types
 
 ## 📜 Scripts Referencenpm run build
 
-
-
 | Command | Description |# Build specific app
 
 |---------|-------------|npx turbo build --filter=web
@@ -462,8 +369,6 @@ npm run check-types
 
 ## 🔗 Resources- **api**: Hono.js backend with clean architecture (routes → services → database)
 
-
-
 - [Next.js Documentation](https://nextjs.org/docs)### Packages
 
 - [Hono.js Documentation](https://hono.dev/)
@@ -474,11 +379,7 @@ npm run check-types
 
 - [Radix UI Documentation](https://www.radix-ui.com/)- **@repo/typescript-config**: Shared TypeScript configurations
 
-
-
 ## 📄 License## 🗄️ Database Commands
-
-
 
 This project is for educational purposes. Linear is a trademark of Linear Orbit, Inc.```bash
 
@@ -490,15 +391,18 @@ cd packages/database
 
 **Built with ❤️ following Principal Engineer best practices**npm run db:generate
 
-
 # Run migrations
+
 npm run db:migrate
 
 # Push schema to database (dev only)
+
 npm run db:push
 
 # Open Drizzle Studio
+
 npm run db:studio
+
 ```
 
 ## � Security
@@ -507,10 +411,10 @@ npm run db:studio
 - **JWT Tokens**: 7-day expiration with secure signing
 - **Password Hashing**: Bcrypt with cost factor 12
 - **Session Management**: Database-backed session tokens
-- **Environment Security**: 
+- **Environment Security**:
   - Production deployment fails if `JWT_SECRET` is not set
   - Development shows warnings for missing environment variables
-- **Error Sanitization**: 
+- **Error Sanitization**:
   - Production: No sensitive information in error responses
   - Development: Full error details for debugging
 
@@ -858,3 +762,4 @@ See sections 4.1, 4.2, and 4.3 in [AGENTS.md](./AGENTS.md) for completed feature
 ---
 
 **Built with ❤️ following Principal Engineer best practices**
+```
