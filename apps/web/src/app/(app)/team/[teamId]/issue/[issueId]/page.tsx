@@ -1,8 +1,5 @@
 'use client';
 
-import { ArrowLeft, MoreHorizontal } from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
 import { IssuePriorityIcon } from '@/components/issues/IssuePriorityIcon';
 import { IssueStatusBadge } from '@/components/issues/IssueStatusBadge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -11,6 +8,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { formatDate, formatRelativeTime } from '@/lib/utils';
 import { useIssueStore } from '@/stores/issue-store';
+import { ArrowLeft, MoreHorizontal } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 interface PageProps {
   params: {

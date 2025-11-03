@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
 import { useUIStore } from '@/stores/uiStore';
+import { useEffect } from 'react';
 
 interface KeyboardShortcut {
   key: string;

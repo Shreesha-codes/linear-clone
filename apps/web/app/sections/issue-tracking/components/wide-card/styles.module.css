@@ -27,8 +27,7 @@
 .wide__card .img__container::after {
   @apply content-[''] absolute inset-0;
 
-  background:
-    linear-gradient(to bottom, transparent 70%, var(--color-bg-primary) 100%),
+  background: linear-gradient(to bottom, transparent 70%, var(--color-bg-primary) 100%),
     linear-gradient(
       to right,
       var(--color-bg-primary) 0,

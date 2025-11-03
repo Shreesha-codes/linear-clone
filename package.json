@@ -25,10 +25,7 @@
     "node": ">=18"
   },
   "packageManager": "npm@11.6.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "packages/*"],
   "dependencies": {
     "@types/react-window": "^1.8.8",
     "react-window": "^1.8.10"

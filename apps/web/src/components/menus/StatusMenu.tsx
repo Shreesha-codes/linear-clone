@@ -1,8 +1,8 @@
 'use client';
 
+import { DropdownMenu } from '@/components/ui/dropdown-menu-enhanced';
 import { Circle, CircleCheck, CircleDot, CircleX, Timer } from 'lucide-react';
 import { useState } from 'react';
-import { DropdownMenu } from '@/components/ui/dropdown-menu-enhanced';
 
 export type Status = 'backlog' | 'todo' | 'in_progress' | 'done' | 'canceled';
 

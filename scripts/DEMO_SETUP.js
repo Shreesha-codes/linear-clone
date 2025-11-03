@@ -1,9 +1,9 @@
 /**
  * 🎯 QUICK DEMO SETUP GUIDE
- * 
+ *
  * This script helps you populate your Linear clone with demo data
  * to test all the Phase 2 components we just built.
- * 
+ *
  * Run this in your browser console on http://localhost:3000
  */
 
@@ -37,19 +37,22 @@ const generateMockIssues = (teamId, count = 50) => {
       archived: false,
       createdAt: new Date(Date.now() - i * 86400000).toISOString(),
       updatedAt: new Date(Date.now() - i * 43200000).toISOString(),
-      assignee: i % 3 === 0 ? {
-        id: 'user-1',
-        name: 'Demo User',
-        email: 'demo@example.com',
-        avatarUrl: null
-      } : null,
+      assignee:
+        i % 3 === 0
+          ? {
+              id: 'user-1',
+              name: 'Demo User',
+              email: 'demo@example.com',
+              avatarUrl: null,
+            }
+          : null,
       creator: {
         id: 'user-1',
         name: 'Demo User',
         email: 'demo@example.com',
-        avatarUrl: null
+        avatarUrl: null,
       },
-      labels: []
+      labels: [],
     });
   }
 
@@ -72,7 +75,7 @@ const getRandomTitle = () => {
     'Fix drag and drop issues',
     'Add keyboard shortcuts',
     'Improve error handling',
-    'Update dependencies'
+    'Update dependencies',
   ];
   return titles[Math.floor(Math.random() * titles.length)];
 };
@@ -143,7 +146,7 @@ console.log(`
 
 if (window.useTeamStore) {
   const teamStore = window.useTeamStore.getState();
-  
+
   const demoTeam = {
     id: demoTeamId,
     workspaceId: 'demo-workspace-1',
@@ -153,9 +156,9 @@ if (window.useTeamStore) {
     icon: null,
     archived: false,
     createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    updatedAt: new Date().toISOString(),
   };
-  
+
   teamStore.addTeam(demoTeam);
   teamStore.setActiveTeam(demoTeam);
   console.log('✅ Created demo team');
@@ -167,20 +170,19 @@ if (window.useTeamStore) {
 
 if (window.useWorkspaceStore) {
   const workspaceStore = window.useWorkspaceStore.getState();
-  
+
   const demoWorkspace = {
     id: 'demo-workspace-1',
     name: 'Demo Workspace',
     slug: 'demo',
     icon: null,
     createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    updatedAt: new Date().toISOString(),
   };
-  
+
   workspaceStore.addWorkspace(demoWorkspace);
   workspaceStore.setActiveWorkspace(demoWorkspace);
   console.log('✅ Created demo workspace');
 }
 
 console.log('✨ All done! Navigate to the links above to see the features.');
-

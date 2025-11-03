@@ -1,11 +1,11 @@
 'use client';
 
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import { IssueFilters } from '@/components/issues/IssueFilters';
 import { KanbanBoard } from '@/components/issues/KanbanBoard';
 import { useIssueStore } from '@/stores/issue-store';
 import type { Issue } from '@/types';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 /**
  * Kanban Board Page

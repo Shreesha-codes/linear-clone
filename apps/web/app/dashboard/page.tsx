@@ -1,5 +1,10 @@
 'use client';
 
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { useAuthStore } from '@/stores/authStore';
+import { useIssueStore } from '@/stores/issueStore';
 import {
   AlertCircle,
   ArrowRight,
@@ -13,11 +18,6 @@ import {
   Users,
 } from 'lucide-react';
 import Link from 'next/link';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { useAuthStore } from '@/stores/authStore';
-import { useIssueStore } from '@/stores/issueStore';
 
 export default function DashboardPage() {
   const { user } = useAuthStore();

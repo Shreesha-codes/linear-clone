@@ -1,11 +1,11 @@
 'use client';
 
-import Link from 'next/link';
-import type { FC } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import type { Issue } from '@/types';
+import Link from 'next/link';
+import type { FC } from 'react';
 import { IssuePriorityIcon } from './IssuePriorityIcon';
 
 interface IssueCardProps {

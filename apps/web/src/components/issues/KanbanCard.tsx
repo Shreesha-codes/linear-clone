@@ -1,15 +1,15 @@
 'use client';
 
-import { useSortable } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
-import Link from 'next/link';
-import type { FC } from 'react';
 import { type Priority, PriorityMenu, type Status } from '@/components/menus';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { issueApi } from '@/lib/api';
 import { cn } from '@/lib/utils';
 import { useIssueStore } from '@/stores/issue-store';
 import type { Issue } from '@/types';
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import Link from 'next/link';
+import type { FC } from 'react';
 import { IssuePriorityIcon } from './IssuePriorityIcon';
 
 interface KanbanCardProps {

@@ -1,7 +1,7 @@
-import type { FC, ReactNode } from 'react';
 import AtRisk from '@/assets/at-risk.svg';
 import Electric from '@/assets/electric.svg';
 import OffTrack from '@/assets/off-track.svg';
+import type { FC, ReactNode } from 'react';
 import styles from './styles.module.css';
 
 const updateCards: UpdateCardProps[] = [

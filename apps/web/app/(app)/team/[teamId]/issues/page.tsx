@@ -1,9 +1,5 @@
 'use client';
 
-import { LayoutGrid, List, Plus } from 'lucide-react';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import { IssueFilters } from '@/components/issues/IssueFilters';
 import { IssueForm } from '@/components/issues/IssueForm';
 import { VirtualizedIssueList } from '@/components/issues/VirtualizedIssueList';
@@ -11,6 +7,10 @@ import { Button } from '@/components/ui/button';
 import { issueApi } from '@/lib/api';
 import { useIssueStore } from '@/stores/issue-store';
 import { useTeamStore } from '@/stores/team-store';
+import { LayoutGrid, List, Plus } from 'lucide-react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function TeamIssuesPage() {
   const params = useParams();

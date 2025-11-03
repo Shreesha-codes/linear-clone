@@ -1,13 +1,13 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
 import { CommandPalette } from '@/components/CommandPalette';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { TopNav } from '@/components/layout/TopNav';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
 import { useMockData } from '@/hooks/useMockData';
 import { useAuthLoading, useAuthStore } from '@/stores/authStore';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();

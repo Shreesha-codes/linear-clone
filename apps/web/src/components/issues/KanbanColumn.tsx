@@ -1,11 +1,11 @@
 'use client';
 
+import type { Issue, IssueStatus } from '@/types';
 import { useDroppable } from '@dnd-kit/core';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import type { CSSProperties, FC } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList } from 'react-window';
-import type { Issue, IssueStatus } from '@/types';
 import { IssueStatusBadge } from './IssueStatusBadge';
 import { KanbanCard } from './KanbanCard';
 

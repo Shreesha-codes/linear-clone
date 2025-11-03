@@ -1,6 +1,6 @@
+import { authAdapter } from '@/lib/auth-client';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
-import { authAdapter } from '@/lib/auth-client';
 
 // SECURITY NOTE: JWT Token Storage
 // Current implementation stores tokens in localStorage for development convenience.

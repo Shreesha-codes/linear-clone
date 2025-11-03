@@ -1,6 +1,6 @@
+import type { Issue, IssueFilters } from '@/types';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import type { Issue, IssueFilters } from '@/types';
 
 /**
  * Issue State Interface

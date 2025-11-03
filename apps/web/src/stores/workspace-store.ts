@@ -1,6 +1,6 @@
+import type { Workspace, WorkspaceMember } from '@/types';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
-import type { Workspace, WorkspaceMember } from '@/types';
 
 /**
  * Workspace State Interface

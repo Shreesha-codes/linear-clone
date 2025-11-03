@@ -1,5 +1,8 @@
 'use client';
 
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Archive,
   Bell,
@@ -11,9 +14,6 @@ import {
   UserPlus,
 } from 'lucide-react';
 import { useState } from 'react';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 
 type NotificationType = 'mention' | 'assignment' | 'comment' | 'update';
 type FilterType = 'all' | 'unread' | 'mentions';

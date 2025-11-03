@@ -1,6 +1,17 @@
 'use client';
 
 import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from '@/components/ui/command';
+import { useTeamStore } from '@/stores/teamStore';
+import { useUIStore } from '@/stores/uiStore';
+import {
   FileText,
   FolderKanban,
   Inbox,
@@ -12,17 +23,6 @@ import {
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-} from '@/components/ui/command';
-import { useTeamStore } from '@/stores/teamStore';
-import { useUIStore } from '@/stores/uiStore';
 
 interface CommandAction {
   id: string;

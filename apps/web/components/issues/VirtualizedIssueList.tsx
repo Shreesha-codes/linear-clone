@@ -1,9 +1,9 @@
 'use client';
 
+import type { Issue } from '@/types';
 import { type CSSProperties, memo } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList } from 'react-window';
-import type { Issue } from '@/types';
 import { IssueRow } from './IssueRow';
 
 interface VirtualizedIssueListProps {

@@ -1,8 +1,5 @@
 'use client';
 
-import { ChevronDown, Home, Inbox, Plus, Search, Settings } from 'lucide-react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,6 +13,9 @@ import { cn } from '@/lib/utils';
 import { useTeamStore } from '@/stores/teamStore';
 import { useUIStore } from '@/stores/uiStore';
 import { useWorkspaceStore } from '@/stores/workspaceStore';
+import { ChevronDown, Home, Inbox, Plus, Search, Settings } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export function Sidebar() {
   const pathname = usePathname();

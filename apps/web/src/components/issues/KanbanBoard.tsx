@@ -1,22 +1,22 @@
 'use client';
 
+import { issueApi } from '@/lib/api';
+import { useIssueStore } from '@/stores/issue-store';
+import type { Issue, IssueStatus } from '@/types';
 import {
-  closestCorners,
   DndContext,
   type DragEndEvent,
   DragOverlay,
   type DragStartEvent,
   KeyboardSensor,
   PointerSensor,
+  closestCorners,
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { generateKeyBetween } from 'fractional-indexing';
 import { useMemo, useState } from 'react';
-import { issueApi } from '@/lib/api';
-import { useIssueStore } from '@/stores/issue-store';
-import type { Issue, IssueStatus } from '@/types';
 import { KanbanCard } from './KanbanCard';
 import { KanbanColumn } from './KanbanColumn';
 
@@ -160,14 +160,14 @@ export function KanbanBoard({ issues, teamId }: KanbanBoardProps) {
     // Optimistic update
     updateIssue(draggedIssueId, {
       status: targetStatus,
-      sortOrder: parseFloat(newSortOrderStr),
+      sortOrder: Number.parseFloat(newSortOrderStr),
     });
 
     // Persist to API
     try {
       await issueApi.update(draggedIssueId, {
         status: targetStatus,
-        sortOrder: parseFloat(newSortOrderStr),
+        sortOrder: Number.parseFloat(newSortOrderStr),
       });
     } catch (error) {
       // Rollback on error

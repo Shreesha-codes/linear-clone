@@ -1,5 +1,5 @@
-import type { FC } from 'react';
 import { userCards } from '@/lib/constant';
+import type { FC } from 'react';
 import Menu from '../menu';
 import UserCard from '../user-card';
 import styles from './styles.module.css';

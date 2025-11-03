@@ -1,11 +1,11 @@
 'use client';
 
-import { useCallback, useState } from 'react';
 import { Editor } from '@/components/editor';
 import { Button } from '@/components/ui/button';
 import { AvatarEnhanced } from '@/components/ui/enhanced';
 import { type Comment, issueApi } from '@/lib/api/issues';
 import { formatRelativeTime } from '@/lib/utils';
+import { useCallback, useState } from 'react';
 
 interface CommentListProps {
   issueId: string;

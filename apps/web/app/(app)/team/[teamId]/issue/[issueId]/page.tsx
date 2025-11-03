@@ -1,9 +1,5 @@
 'use client';
 
-import { ArrowLeft, MoreHorizontal } from 'lucide-react';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import { IssuePriorityIcon } from '@/components/issues/IssuePriorityIcon';
 import { IssueStatusBadge } from '@/components/issues/IssueStatusBadge';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -14,6 +10,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { issueApi } from '@/lib/api';
 import { formatDate, formatRelativeTime } from '@/lib/utils';
 import { useIssueStore } from '@/stores/issue-store';
+import { ArrowLeft, MoreHorizontal } from 'lucide-react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function IssueDetailPage() {
   const params = useParams();

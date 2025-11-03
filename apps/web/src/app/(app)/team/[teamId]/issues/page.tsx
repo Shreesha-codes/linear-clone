@@ -1,14 +1,14 @@
 'use client';
 
-import { LayoutGrid, List, Plus } from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
 import { IssueFilters } from '@/components/issues/IssueFilters';
 import { VirtualizedIssueList } from '@/components/issues/VirtualizedIssueList';
 import { Button } from '@/components/ui/button';
 import { useIssueStore } from '@/stores/issue-store';
 import { useTeamStore } from '@/stores/team-store';
 import type { IssueFilters as IssueFiltersType } from '@/types';
+import { LayoutGrid, List, Plus } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 interface PageProps {
   params: {

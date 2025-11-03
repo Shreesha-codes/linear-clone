@@ -1,8 +1,8 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-react';
 import type { ReactNode, SelectHTMLAttributes } from 'react';
-import { cn } from '@/lib/utils';
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   children: ReactNode;

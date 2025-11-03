@@ -1,8 +1,8 @@
 'use client';
 
+import { illustrate } from '@/lib/animations';
 import { motion } from 'framer-motion';
 import type { FC, ReactNode } from 'react';
-import { illustrate } from '@/lib/animations';
 
 type Props = {
   children: ReactNode;

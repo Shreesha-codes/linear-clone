@@ -1,10 +1,10 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { Transition } from '@headlessui/react';
 import { X } from 'lucide-react';
 import React, { type MouseEvent, memo, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { cn } from '@/lib/utils';
 
 interface ModalProps {
   title?: string;

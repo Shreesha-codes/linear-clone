@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import type { Editor as TipTapEditor } from '@tiptap/react';
 import {
   Bold,
@@ -11,7 +12,6 @@ import {
   Quote,
   Strikethrough,
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 export interface EditorMenuProps {
   editor: TipTapEditor;
@@ -72,7 +72,7 @@ const EditorMenu = ({ editor }: EditorMenuProps) => {
       >
         <Code className="w-4 h-4" />
       </button>
-      <div className="border-r mx-1 border-border"></div>
+      <div className="border-r mx-1 border-border" />
       <button
         type="button"
         onClick={() => editor.chain().focus().toggleBulletList().run()}

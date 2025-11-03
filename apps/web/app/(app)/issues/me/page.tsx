@@ -1,5 +1,13 @@
 'use client';
 
+import { IssueForm } from '@/components/issues/IssueForm';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { issueApi } from '@/lib/api';
+import { useIssueStore } from '@/stores/issueStore';
+import { useTeamStore } from '@/stores/team-store';
 import {
   AlertCircle,
   ArrowUp,
@@ -13,14 +21,6 @@ import {
   Search,
 } from 'lucide-react';
 import { useState } from 'react';
-import { IssueForm } from '@/components/issues/IssueForm';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { issueApi } from '@/lib/api';
-import { useIssueStore } from '@/stores/issueStore';
-import { useTeamStore } from '@/stores/team-store';
 
 type ViewMode = 'list' | 'board';
 type FilterType = 'all' | 'active' | 'completed';

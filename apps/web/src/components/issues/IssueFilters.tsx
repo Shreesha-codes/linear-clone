@@ -1,10 +1,10 @@
 'use client';
 
-import { X } from 'lucide-react';
-import type { FC } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { IssueFilters as IssueFiltersType } from '@/types';
+import { X } from 'lucide-react';
+import type { FC } from 'react';
 
 interface IssueFiltersProps {
   filters: IssueFiltersType;

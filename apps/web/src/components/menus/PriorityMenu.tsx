@@ -1,8 +1,8 @@
 'use client';
 
+import { DropdownMenu } from '@/components/ui/dropdown-menu-enhanced';
 import { AlertCircle, ArrowDown, ArrowUp, Minus } from 'lucide-react';
 import { useState } from 'react';
-import { DropdownMenu } from '@/components/ui/dropdown-menu-enhanced';
 
 export type Priority = 'none' | 'low' | 'medium' | 'high' | 'urgent';
 

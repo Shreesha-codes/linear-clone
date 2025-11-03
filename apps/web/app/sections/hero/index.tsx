@@ -1,12 +1,12 @@
-import { ChevronRight } from 'lucide-react';
-import Link from 'next/link';
-import type { FC } from 'react';
 import Inbox from '@/assets/inbox.svg';
 import BlurPopUp from '@/components/blur-pop-up';
 import BlurPopUpByWord from '@/components/blur-pop-up-by-words';
 import IllustrateAnimate from '@/components/illustrate-animate';
 import LayoutWrapper from '@/components/layout-wrapper';
 import { cn } from '@/lib/utils';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import type { FC } from 'react';
 import Sidebar from './components/sidebar';
 import styles from './styles.module.css';
 
